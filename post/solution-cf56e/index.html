@@ -1,0 +1,312 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>【题解】CF56E | LTb的博客</title>
+<link rel="shortcut icon" href="https://lycLTb.github.io//favicon.ico?v=1584613575229">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://lycLTb.github.io//styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="【题解】CF56E | LTb的博客 - Atom Feed" href="https://lycLTb.github.io//atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="Link
+
+题意简述：给你一些多米诺骨牌，在 xxx 轴上从左到右排列在一起，问每一个倒向右边的时候会压倒多少个骨牌？
+
+首先按坐标升序排序
+从后往前维护 toito_itoi​，表示第 iii 个骨牌能推到的最远的骨牌的编号。
+二分这个骨..." />
+    <meta name="keywords" content="はるまきごはん,题解,日常不灌水" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://lycLTb.github.io/">
+  <img class="avatar" src="https://lycLTb.github.io//images/avatar.png?v=1584613575229" alt="">
+  </a>
+  <h1 class="site-title">
+    LTb的博客
+  </h1>
+  <p class="site-description">
+    OvO
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="https://lycLTb.github.io/blog/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="https://lycLTb.github.io/blog/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="https://lycLTb.github.io/blog/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="https://lycLTb.github.io/blog/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/lycLTb" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+        <a href="https://www.zhihu.com/people/ltb-35-93" target="_blank">
+          <i class="ri-zhihu-line"></i>
+        </a>
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              【题解】CF56E
+            </h2>
+            <div class="post-info">
+              <span>
+                2020-03-12
+              </span>
+              <span>
+                5 min read
+              </span>
+              
+                <a href="https://lycLTb.github.io/tag/nGY4Tbzrv/" class="post-tag">
+                  # はるまきごはん
+                </a>
+              
+                <a href="https://lycLTb.github.io/tag/TJKQz1LEq/" class="post-tag">
+                  # 题解
+                </a>
+              
+                <a href="https://lycLTb.github.io/tag/YfF4dmNnM/" class="post-tag">
+                  # 日常不灌水
+                </a>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://lycLTb.github.io//post-images/solution-cf56e.jpg" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p><a href="https://codeforces.com/problemset/problem/56/E">Link</a></p>
+<blockquote>
+<p>题意简述：给你一些多米诺骨牌，在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span> 轴上从左到右排列在一起，问每一个倒向右边的时候会压倒多少个骨牌？</p>
+</blockquote>
+<p>首先按坐标升序排序</p>
+<p>从后往前维护 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi><msub><mi>o</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">to_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76508em;vertical-align:-0.15em;"></span><span class="mord mathdefault">t</span><span class="mord"><span class="mord mathdefault">o</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，表示第 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span> 个骨牌能推到的最远的骨牌的编号。</p>
+<p>二分这个骨牌<strong>自己</strong>能推到的最远的骨牌，设这个骨牌为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span></span></span></span> ，则 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi><msub><mi>o</mi><mi>i</mi></msub><mo>=</mo><mi>max</mi><mo>⁡</mo><mo>(</mo><mi mathvariant="normal">∀</mi><mi>i</mi><mo>≤</mo><mi>k</mi><mo>≤</mo><mi>j</mi><mo>:</mo><mi>t</mi><msub><mi>o</mi><mi>k</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">to_i=\max(\forall i\le k\le j:to_k)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76508em;vertical-align:-0.15em;"></span><span class="mord mathdefault">t</span><span class="mord"><span class="mord mathdefault">o</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">max</span><span class="mopen">(</span><span class="mord">∀</span><span class="mord mathdefault">i</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.83041em;vertical-align:-0.13597em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">t</span><span class="mord"><span class="mord mathdefault">o</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span> ，显然可以用线段树维护。</p>
+<p>时间复杂度<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="script">O</mi><mo>(</mo><mi>n</mi><mi>log</mi><mo>⁡</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\mathcal{O(n \log n)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathcal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></span></p>
+<p>看起来比其他题解菜很多但是 <strong>又 不 是 不 能 A</strong></p>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+const int MAXN=100005;
+int n;
+struct point{
+	int pos,h,id;
+	bool operator&lt;(point b){
+		return pos&lt;b.pos;
+	}
+}tmp[MAXN];
+int a[MAXN],h[MAXN];
+int to[MAXN];
+int ans[MAXN];
+
+struct Segment_Tree{
+	// const int INF=0x3f3f3f3f;
+	struct node{
+		int l,r,len;
+		int add,v,mx;
+	}st[MAXN*4];
+	
+	void build(int p,int l,int r){
+		st[p].l=l;st[p].r=r;
+		st[p].len=r-l+1;
+		if (l==r){
+			// st[p].v=a[l];
+			st[p].mx=0;
+			return;
+		}
+		int mid=l+r&gt;&gt;1;
+		build(p&lt;&lt;1,l,mid);
+		build(p&lt;&lt;1|1,mid+1,r);
+		st[p].v=st[p&lt;&lt;1].v+st[p&lt;&lt;1|1].v;
+		st[p].mx=max(st[p&lt;&lt;1].mx,st[p&lt;&lt;1|1].mx);
+	}
+
+	void spread(int p){
+		// st[p&lt;&lt;1].v+=st[p].add*st[p&lt;&lt;1].len;
+		// st[p&lt;&lt;1|1].v+=st[p].add*st[p&lt;&lt;1|1].len;
+		st[p&lt;&lt;1].add+=st[p].add;
+		st[p&lt;&lt;1|1].add+=st[p].add;
+		st[p&lt;&lt;1].mx+=st[p].add;
+		st[p&lt;&lt;1|1].mx+=st[p].add;
+		st[p].add=0;
+	}
+
+	void change(int p,int l,int r,int c){
+		if (l&lt;=st[p].l&amp;&amp;st[p].r&lt;=r){
+			// st[p].v+=c*st[p].len;
+			st[p].add+=c;
+			st[p].mx+=c;
+			return;
+		}
+		spread(p);
+		int mid=st[p].l+st[p].r&gt;&gt;1;
+		if (l&lt;=mid) change(p&lt;&lt;1,l,r,c);
+		if (r&gt;mid) change(p&lt;&lt;1|1,l,r,c);
+		// st[p].v=st[p&lt;&lt;1].v+st[p&lt;&lt;1|1].v;
+		st[p].mx=max(st[p&lt;&lt;1].mx,st[p&lt;&lt;1|1].mx);
+	}
+
+	int query_max(int p,int l,int r){
+		if (l&lt;=st[p].l &amp;&amp; st[p].r&lt;=r)
+			return st[p].mx;
+		spread(p);
+		int mid=st[p].l+st[p].r&gt;&gt;1,ans=0;
+		if (l&lt;=mid) ans=query_max(p&lt;&lt;1,l,r);
+		if (r&gt;mid) ans=max(ans,query_max(p&lt;&lt;1|1,l,r));
+		return ans;
+	}
+}seg;
+
+int main()
+
+{
+	cin&gt;&gt;n;
+	for (int i=1;i&lt;=n;i++){
+		cin&gt;&gt;tmp[i].pos&gt;&gt;tmp[i].h;
+		tmp[i].id=i;
+	}
+
+	sort(tmp+1,tmp+1+n);
+
+	for (int i=1;i&lt;=n;i++){
+		a[i]=tmp[i].pos;
+		h[i]=tmp[i].h;
+	}
+
+	seg.build(1,1,n);
+	to[n]=n;
+	ans[tmp[n].id]=1;
+	seg.change(1,n,n,n);
+	for (int i=n-1;i&gt;=1;i--){
+		int l=i,r=n,goal=a[i]+h[i]-1;
+		while (l&lt;=r){
+			int mid=l+r&gt;&gt;1;
+			if (a[mid]&lt;=goal) l=mid+1;
+			else r=mid-1;
+		}
+		to[i]=max(i,seg.query_max(1,i,r));
+		seg.change(1,i,i,to[i]);
+		ans[tmp[i].id]=to[i]-i+1;
+	}
+
+	for (int i=1;i&lt;=n;i++)
+		cout&lt;&lt;ans[i]&lt;&lt;&quot; &quot;;
+	cout&lt;&lt;endl;
+	return 0;
+}
+</code></pre>
+
+              </div>
+              <div class="toc-container">
+                
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://lycLTb.github.io/post/noi-online/">
+              <h3 class="post-title">
+                NOI Online游记
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  2020-2020 LTb ; Power by <a href="https://gridea.dev/">Gridea</a>
+  <a class="rss" href="https://lycLTb.github.io//atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
