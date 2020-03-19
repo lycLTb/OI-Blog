@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>lyc要填的坑 | LTb的博客</title>
-<link rel="shortcut icon" href="https://lycLTb.github.io//favicon.ico?v=1584614255196">
+<link rel="shortcut icon" href="https://lycLTb.github.io//favicon.ico?v=1584621606163">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://lycLTb.github.io//styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="lyc要填的坑 | LTb的博客 - Atom Feed" href="https://lycLTb.github.io//atom.xml">
@@ -26,7 +26,7 @@ NFLS 11.9 集..." />
       <div class="main-content">
         <div class="site-header">
   <a href="https://lycLTb.github.io/">
-  <img class="avatar" src="https://lycLTb.github.io//images/avatar.png?v=1584614255196" alt="">
+  <img class="avatar" src="https://lycLTb.github.io//images/avatar.png?v=1584621606163" alt="">
   </a>
   <h1 class="site-title">
     LTb的博客
@@ -164,6 +164,32 @@ NFLS 11.9 集..." />
           </div>
         
 
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '460c745c51801f936b40',
+    clientSecret: '93f7f3ab9e979f7591a1202cd2ec887b8d2d8c45',
+    repo: 'lycLTb.github.io',
+    owner: 'lycLTb',
+    admin: ['lycLTb'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
         
 
         <div class="site-footer">
