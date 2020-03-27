@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>lyc的板子 | LTb的博客</title>
-<link rel="shortcut icon" href="https://lycLTb.github.io//favicon.ico?v=1585305039547">
+<link rel="shortcut icon" href="https://lycLTb.github.io//favicon.ico?v=1585305243718">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://lycLTb.github.io//styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="lyc的板子 | LTb的博客 - Atom Feed" href="https://lycLTb.github.io//atom.xml">
@@ -28,7 +28,7 @@ struct Segment_Tree{
       <div class="main-content">
         <div class="site-header">
   <a href="https://lycLTb.github.io/">
-  <img class="avatar" src="https://lycLTb.github.io//images/avatar.png?v=1585305039547" alt="">
+  <img class="avatar" src="https://lycLTb.github.io//images/avatar.png?v=1585305243718" alt="">
   </a>
   <h1 class="site-title">
     LTb的博客
@@ -188,11 +188,21 @@ struct Segment_Tree{
 const int MAXN=10005;
 const int MAXM=100005;
 int n,m,s,t;
+int Index=0;
 int w[MAXM*2];
 vector&lt;int&gt; v[MAXN];
 int point[MAXM*2];
 int label[MAXN];
 int cur[MAXN*2];
+
+void add_edge(int x,int y,int f){
+	v[x].push_back((++Index)*2);
+	v[y].push_back(Index*2+1);
+	w[Index*2]=f;
+	w[Index*2+1]=0;
+	point[Index*2]=y;
+	point[Index*2+1]=x;
+}
 
 bool bfs(){
 	memset(label,0,sizeof(label));
