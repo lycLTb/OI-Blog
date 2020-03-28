@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>lyc的板子 | LTb的博客</title>
-<link rel="shortcut icon" href="https://lycLTb.github.io//favicon.ico?v=1585372053325">
+<link rel="shortcut icon" href="https://lycLTb.github.io//favicon.ico?v=1585374417553">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://lycLTb.github.io//styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="lyc的板子 | LTb的博客 - Atom Feed" href="https://lycLTb.github.io//atom.xml">
@@ -28,7 +28,7 @@ struct Segment_Tree{
       <div class="main-content">
         <div class="site-header">
   <a href="https://lycLTb.github.io/">
-  <img class="avatar" src="https://lycLTb.github.io//images/avatar.png?v=1585372053325" alt="">
+  <img class="avatar" src="https://lycLTb.github.io//images/avatar.png?v=1585374417553" alt="">
   </a>
   <h1 class="site-title">
     LTb的博客
@@ -268,30 +268,34 @@ int dinic(){
 }
 </code></pre>
 <h3 id="树状数组">树状数组</h3>
-<pre><code class="language-c++">int tree[MAXN];
-inline int lowbit(int x){
-    return x&amp;(-x);
-}
+<p>结构体封装，支持单点修改，区间查询</p>
+<pre><code class="language-c++">struct BIT{
+	int tree[MAXN];
 
-inline void add(int x,int c){
-	while (x&lt;=n+1){
-		tree[x]+=c;
-		c+=lowbit(c);
+	inline int lowbit(int x){
+	    return x&amp;(-x);
 	}
-}
 
-inline int BIT_query(int x){
-	int ans=0;
-	while (x&lt;0){
-		ans+=tree[x];
-		x-=lowbit(x);
+	inline void add(int x,int c){
+		while (x&lt;=n+1){
+			tree[x]+=c;
+			x+=lowbit(x);
+		}
 	}
-	return ans;
-}
 
-inline int query(int l,int r){
-	return BIT_query(r)-BIT_query(l-1);
-}
+	inline int query1(int x){
+		int ans=0;
+		while (x&gt;0){
+			ans+=tree[x];
+			x-=lowbit(x);
+		}
+		return ans;
+	}
+
+	inline int query2(int l,int r){
+		return query1(r)-query1(l-1);
+	}
+};
 </code></pre>
 
               </div>
