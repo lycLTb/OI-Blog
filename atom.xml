@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lycLTb.github.io/</id>
     <title>LTb的博客</title>
-    <updated>2020-03-29T04:51:31.845Z</updated>
+    <updated>2020-04-01T15:09:09.920Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lycLTb.github.io/"/>
     <link rel="self" href="https://lycLTb.github.io/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://lycLTb.github.io/images/avatar.png</logo>
     <icon>https://lycLTb.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, LTb的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[【学习笔记】数论]]></title>
+        <id>https://lycLTb.github.io/post/notes-math1/</id>
+        <link href="https://lycLTb.github.io/post/notes-math1/">
+        </link>
+        <updated>2020-04-01T15:07:56.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[lyc的板子]]></title>
         <id>https://lycLTb.github.io/post/template/</id>
@@ -72,12 +79,5 @@
         <link href="https://lycLTb.github.io/post/solution-cf1185g1/">
         </link>
         <updated>2020-02-26T04:49:17.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[lyc的训练计划]]></title>
-        <id>https://lycLTb.github.io/post/training/</id>
-        <link href="https://lycLTb.github.io/post/training/">
-        </link>
-        <updated>2020-02-26T03:38:16.000Z</updated>
     </entry>
 </feed>
