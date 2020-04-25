@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>lyc的板子 | LTb的博客</title>
-<link rel="shortcut icon" href="https://lycLTb.github.io//favicon.ico?v=1587722924501">
+<link rel="shortcut icon" href="https://lycLTb.github.io//favicon.ico?v=1587775780217">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://lycLTb.github.io//styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="lyc的板子 | LTb的博客 - Atom Feed" href="https://lycLTb.github.io//atom.xml">
@@ -28,7 +28,7 @@ struct Segment_Tree{
       <div class="main-content">
         <div class="site-header">
   <a href="https://lycLTb.github.io/">
-  <img class="avatar" src="https://lycLTb.github.io//images/avatar.png?v=1587722924501" alt="">
+  <img class="avatar" src="https://lycLTb.github.io//images/avatar.png?v=1587775780217" alt="">
   </a>
   <h1 class="site-title">
     LTb的博客
@@ -320,6 +320,15 @@ pause
 if not errorlevel 1 goto start
 pause
 </code></pre>
+<h3 id="快读">快读</h3>
+<pre><code class="language-c++">int read(){
+    int x=0,f=1;
+    char ch;
+    while(ch&lt;'0'||ch&gt;'9')  {if(ch=='-')f=-1;ch=getchar();}
+    while(ch&gt;='0'&amp;&amp;ch&lt;='9'){x=x*10+ch-'0';ch=getchar();}
+    return f*x;
+}
+</code></pre>
 
               </div>
               <div class="toc-container">
@@ -333,6 +342,7 @@ pause
 <li><a href="#%E5%BF%AB%E9%80%9F%E5%B9%82">快速幂</a></li>
 <li><a href="#%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84">树状数组</a></li>
 <li><a href="#%E5%AF%B9%E6%8B%8D">对拍</a></li>
+<li><a href="#%E5%BF%AB%E8%AF%BB">快读</a></li>
 </ul>
 </li>
 </ul>
