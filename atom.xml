@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lycLTb.github.io/</id>
     <title>LTb的博客</title>
-    <updated>2020-05-15T13:23:01.867Z</updated>
+    <updated>2020-05-15T13:25:24.331Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lycLTb.github.io/"/>
     <link rel="self" href="https://lycLTb.github.io/atom.xml"/>
@@ -12,8 +12,8 @@
     <rights>All rights reserved 2020, LTb的博客</rights>
     <entry>
         <title type="html"><![CDATA[【学习笔记】组合数学 第5章]]></title>
-        <id>https://lycLTb.github.io/post/comb-5-tasks/</id>
-        <link href="https://lycLTb.github.io/post/comb-5-tasks/">
+        <id>https://lycLTb.github.io/post/comb-5/</id>
+        <link href="https://lycLTb.github.io/post/comb-5/">
         </link>
         <updated>2020-05-01T00:26:26.000Z</updated>
     </entry>
