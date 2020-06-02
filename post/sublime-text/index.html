@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Sublime Text 折腾笔记 | LTb的博客</title>
-<link rel="shortcut icon" href="https://lycLTb.github.io//favicon.ico?v=1591013102466">
+<link rel="shortcut icon" href="https://lycLTb.github.io//favicon.ico?v=1591094262495">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://lycLTb.github.io//styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="Sublime Text 折腾笔记 | LTb的博客 - Atom Feed" href="https://lycLTb.github.io//atom.xml">
@@ -27,7 +27,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://lycLTb.github.io/">
-  <img class="avatar" src="https://lycLTb.github.io//images/avatar.png?v=1591013102466" alt="">
+  <img class="avatar" src="https://lycLTb.github.io//images/avatar.png?v=1591094262495" alt="">
   </a>
   <h1 class="site-title">
     LTb的博客
@@ -95,7 +95,7 @@
                 2020-05-31
               </span>
               <span>
-                5 min read
+                7 min read
               </span>
               
                 <a href="https://lycLTb.github.io/tag/tByWK09CP/" class="post-tag">
@@ -193,6 +193,58 @@
 &quot;TabWidth&quot;: 4,
 &quot;UseTab&quot;: &quot;Always&quot;
 </code></pre>
+<h2 id="0x04-snippets">0x04 Snippets</h2>
+<p><a href="https://www.cnblogs.com/easy-blue/p/7515088.html">Ref</a></p>
+<h3 id="创建snippets">创建snippets</h3>
+<h4 id="新建和保存">新建和保存</h4>
+<p>菜单栏中依次选择 Tools | Developer | New Snippet... 就会新建一个扩展名为.sublime-snippet 的 XML 语法的文档，注意后缀是识别 snippets 的关键。</p>
+<p>代码片段可以任意存储在 packages 文件夹下，默认会保存在 Packages\User 文件夹里，为了方便管理和使用建议再新建个文件夹例如 snippets，则路径为 Packages\User\snippets。</p>
+<p>默认结构如下：</p>
+<pre><code class="language-xml">&lt;snippet&gt;
+	&lt;content&gt;&lt;![CDATA[
+Hello, ${1:this} is a ${2:snippet}.
+]]&gt;&lt;/content&gt;
+	&lt;!-- Optional: Set a tabTrigger to define how to trigger the snippet --&gt;
+	&lt;!-- &lt;tabTrigger&gt;hello&lt;/tabTrigger&gt; --&gt;
+	&lt;!-- Optional: Set a scope to limit where the snippet will trigger --&gt;
+	&lt;!-- &lt;scope&gt;source.python&lt;/scope&gt; --&gt;
+&lt;/snippet&gt;
+</code></pre>
+<h4 id="content">content</h4>
+<p><code>&lt;content&gt;&lt;/content&gt;</code>中必须包含<code>&lt;![CDATA[…]]&gt;</code>，在这里面写自定义的代码片段。</p>
+<p>代码片段如果含有<code>]]&gt;</code>，需写成<code>]]$NOT_DEFINED&gt;</code>。</p>
+<p>如果含有 <code>$</code>，需写成 <code>\$</code>。</p>
+<h4 id="tabtrigger">tabTrigger</h4>
+<p>在 <code>&lt;tabTrigger&gt;&lt;/tabTrigger&gt;</code> 中设置让Sublime自动补全的触发词（trigger keyword）。</p>
+<h4 id="scope">scope</h4>
+<p>设置代码片段在何种语言环境下激活，默认写的是python。</p>
+<p>想指定多个scope，可以使用英文逗号,来分隔。</p>
+<p>如何知道文档的Scope是什么？菜单栏依次选择 Tools | Developer | Show Scope Name...，快捷键是 Ctrl+Alt+Shift+P。</p>
+<h4 id="description">description</h4>
+<p>如果加了<code>&lt;description&gt;</code>描述内容<code>&lt;/description&gt;</code>，点开 Tools | Snippets... 会显示你定义的描述内容。</p>
+<p>如果不写则显示文件名。</p>
+<h4 id="设置光标位置fields">设置光标位置Fields</h4>
+<pre><code class="language-xml">&lt;snippet&gt;
+    &lt;content&gt;&lt;![CDATA[
+First Name: $1
+Second Name: $2
+Address: $3
+]]&gt;&lt;/content&gt;
+</code></pre>
+<p>美元符加数字即可设置 field markers 即光标的位置，按Tab键光标按数字依次从小到大循环，如上从 1 到 2 到 3 再到 1。</p>
+<p>Shift+Tab 可以进行向上跳转。</p>
+<p>Esc 结束跳转。</p>
+<p><code>$0</code> 表示最后一个位置。</p>
+<h4 id="镜像域-mirrored-fields">镜像域 Mirrored Fields</h4>
+<p>相同编号的位置即是镜像域，可同时选中进行编辑。</p>
+<h4 id="占位符-placeholders">占位符 Placeholders</h4>
+<p><code>{数字编号}</code> 可以得到一个 Tab 占位符。</p>
+<p><code>{1:default}</code> 可以得到一个默认值。</p>
+<p>按Tab键依次循环选中代码片段中的默认值。</p>
+<p>如默认的代码片段 <code>Hello, ${1:this} is a ${2:snippet}.</code> 会依次循环选中单词 this snippet。</p>
+<h3 id="使用snippets">使用snippets</h3>
+<p>方法1：菜单栏点击 Tools | Snippets... ,弹出为当前语法可用的Snippet，点击即插入。</p>
+<p>方法2：输入触发词然后按 Tab 键。</p>
 
               </div>
               <div class="toc-container">
@@ -210,6 +262,23 @@
 <li><a href="#%E9%80%8F%E6%98%8E%E8%83%8C%E6%99%AF">透明背景</a></li>
 <li><a href="#%E4%B8%BB%E9%A2%98">主题</a></li>
 <li><a href="#%E4%BB%A3%E7%A0%81%E6%A0%BC%E5%BC%8F%E5%8C%96">代码格式化</a></li>
+</ul>
+</li>
+<li><a href="#0x04-snippets">0x04 Snippets</a>
+<ul>
+<li><a href="#%E5%88%9B%E5%BB%BAsnippets">创建snippets</a>
+<ul>
+<li><a href="#%E6%96%B0%E5%BB%BA%E5%92%8C%E4%BF%9D%E5%AD%98">新建和保存</a></li>
+<li><a href="#content">content</a></li>
+<li><a href="#tabtrigger">tabTrigger</a></li>
+<li><a href="#scope">scope</a></li>
+<li><a href="#description">description</a></li>
+<li><a href="#%E8%AE%BE%E7%BD%AE%E5%85%89%E6%A0%87%E4%BD%8D%E7%BD%AEfields">设置光标位置Fields</a></li>
+<li><a href="#%E9%95%9C%E5%83%8F%E5%9F%9F-mirrored-fields">镜像域 Mirrored Fields</a></li>
+<li><a href="#%E5%8D%A0%E4%BD%8D%E7%AC%A6-placeholders">占位符 Placeholders</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BD%BF%E7%94%A8snippets">使用snippets</a></li>
 </ul>
 </li>
 </ul>
