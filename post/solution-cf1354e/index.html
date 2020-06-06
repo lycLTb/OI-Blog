@@ -1,0 +1,333 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>【题解】CF1354E | LTb的博客</title>
+<link rel="shortcut icon" href="https://lycLTb.github.io//favicon.ico?v=1591426635616">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://lycLTb.github.io//styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="【题解】CF1354E | LTb的博客 - Atom Feed" href="https://lycLTb.github.io//atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="Link
+我们观察一下连边的条件，发现能连的边只有 1−21-21−2 和 2−32-32−3 。也就是说 111 和 333 并没有区别，于是把 111 和 333 看作同一个颜色。
+然后很自然的想到黑白染色，注意要判断有没有颜色冲突。
+..." />
+    <meta name="keywords" content="はるまきごはん,题解,日常不灌水" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://lycLTb.github.io/">
+  <img class="avatar" src="https://lycLTb.github.io//images/avatar.png?v=1591426635616" alt="">
+  </a>
+  <h1 class="site-title">
+    LTb的博客
+  </h1>
+  <p class="site-description">
+    I wander in your never ending dreamless dreams.
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/lycLTb" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+        <a href="https://www.zhihu.com/people/ltb-35-93" target="_blank">
+          <i class="ri-zhihu-line"></i>
+        </a>
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              【题解】CF1354E
+            </h2>
+            <div class="post-info">
+              <span>
+                2020-05-18
+              </span>
+              <span>
+                4 min read
+              </span>
+              
+                <a href="https://lycLTb.github.io/tag/nGY4Tbzrv/" class="post-tag">
+                  # はるまきごはん
+                </a>
+              
+                <a href="https://lycLTb.github.io/tag/TJKQz1LEq/" class="post-tag">
+                  # 题解
+                </a>
+              
+                <a href="https://lycLTb.github.io/tag/YfF4dmNnM/" class="post-tag">
+                  # 日常不灌水
+                </a>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://lycLTb.github.io//post-images/solution-cf1354e.jpg" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p><a href="https://codeforces.com/problemset/problem/1354/E">Link</a></p>
+<p>我们观察一下连边的条件，发现能连的边只有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>−</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">1-2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mo>−</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">2-3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span> 。也就是说 <strong><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span> 并没有区别</strong>，于是把 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span> 看作同一个颜色。</p>
+<p>然后很自然的想到黑白染色，注意要判断有没有颜色冲突。</p>
+<p>黑白染色之后，对于每一个连通块，我们得到了其中黑色和白色的个数。显然，要么一个连通块里的黑色点全部染成颜色 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span> ，白色点染成 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span>；要么白色点全部染成颜色 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span> ，黑色点染成 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span>。</p>
+<p>现在我们想要知道把哪些点染成 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span>，哪些点染成 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 或 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span>。于是做一个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>n</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">n^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span> 的 dp。和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>01</mn></mrow><annotation encoding="application/x-tex">01</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mord">1</span></span></span></span> 背包一样（好像不太一样 不管了x），设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><msub><mi>p</mi><mrow><mi>i</mi><mi mathvariant="normal">.</mi><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">dp_{i.j}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.980548em;vertical-align:-0.286108em;"></span><span class="mord mathdefault">d</span><span class="mord"><span class="mord mathdefault">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mord mtight">.</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span> 表示前 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span> 个连通块中，是否可能染 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span></span></span></span> 个颜色 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span>。转移也和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>01</mn></mrow><annotation encoding="application/x-tex">01</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mord">1</span></span></span></span> 背包没有太大差异，不再赘述。</p>
+<p>最后统计答案的时候按照背包出来的方案分一下，再随意分配一下 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span>，输出答案。</p>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;string.h&gt;
+using namespace std;
+const int MAXN=5005;
+int n,m;
+vector&lt;int&gt; v[MAXN];
+int n1,n2,n3;
+int cnt[MAXN],total=0;
+int c1[MAXN];
+bool vis[MAXN];
+bool dp[MAXN][MAXN];
+int la[MAXN];
+bool color[MAXN];
+bool flag=true;
+int head[MAXN];
+
+void dfs(int p,bool t){
+	vis[p]=true;
+	c1[total]+=t;
+	cnt[total]++;
+	color[p]=t;
+	for (int i:v[p]){
+		if (!vis[i]) dfs(i,t^1);
+		else if (color[i]!=(t^1)){
+			flag=false;
+			return;
+		}
+	}
+}
+
+void coloring(int p,bool t){
+	color[p]=t;
+	vis[p]=true;
+	for (int i:v[p])
+		if (!vis[i]) coloring(i,t^1);
+}
+
+int main()
+
+{
+	cin&gt;&gt;n&gt;&gt;m;
+	cin&gt;&gt;n1&gt;&gt;n2&gt;&gt;n3;
+	for (int i=1;i&lt;=m;i++){
+		int x,y;
+		cin&gt;&gt;x&gt;&gt;y;
+		v[x].push_back(y);
+		v[y].push_back(x);
+	}
+
+	for (int i=1;i&lt;=n;i++){
+		if (!vis[i]){
+			total++;
+			head[total]=i;
+			dfs(i,true);
+			if (!flag){
+				cout&lt;&lt;&quot;NO&quot;&lt;&lt;endl;
+				return 0;
+			}
+		}
+	}
+
+	dp[0][0]=true;
+	for (int i=1;i&lt;=total;i++){
+		for (int j=n2;j&gt;=0;j--){
+			if (j-c1[i]&gt;=0 &amp;&amp; dp[i-1][j-c1[i]])
+				dp[i][j]=true;
+
+			int tmp=cnt[i]-c1[i];
+			if (j-tmp&gt;=0 &amp;&amp; dp[i-1][j-tmp])
+				dp[i][j]=true;
+		}
+	}
+
+	if (!dp[total][n2]){
+		cout&lt;&lt;&quot;NO&quot;&lt;&lt;endl;
+		return 0;
+	}
+
+	cout&lt;&lt;&quot;YES&quot;&lt;&lt;endl;
+
+	memset(vis,false,sizeof(vis));
+	memset(color,false,sizeof(color));
+	int pos=n2,i=total;
+	while (pos&gt;0 &amp;&amp; i&gt;0){
+		if (pos-c1[i]&gt;=0 &amp;&amp; dp[i-1][pos-c1[i]]){
+			coloring(head[i],true);
+			pos-=c1[i];
+		}
+		else{
+			coloring(head[i],false);
+			pos-=(cnt[i]-c1[i]);
+		}
+		i--;
+	}
+	
+	int xcnt=0;
+	for (int i=1;i&lt;=n;i++){
+		if (color[i]) cout&lt;&lt;2;
+		else{
+			if (xcnt&lt;n1){
+				cout&lt;&lt;1;
+				xcnt++;
+			}
+			else cout&lt;&lt;3;
+		}
+	}
+
+	cout&lt;&lt;endl;
+	return 0;
+}
+</code></pre>
+
+              </div>
+              <div class="toc-container">
+                
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://lycLTb.github.io/post/comb-5/">
+              <h3 class="post-title">
+                【学习笔记】组合数学 第5章
+              </h3>
+            </a>
+          </div>
+        
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '460c745c51801f936b40',
+    clientSecret: '93f7f3ab9e979f7591a1202cd2ec887b8d2d8c45',
+    repo: 'lycLTb.github.io',
+    owner: 'lycLTb',
+    admin: ['lycLTb'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
+
+        <div class="site-footer">
+  2020-2020 LTb ; Power by <a href="https://gridea.dev/">Gridea</a>
+  <a class="rss" href="https://lycLTb.github.io//atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
