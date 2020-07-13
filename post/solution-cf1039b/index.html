@@ -1,0 +1,268 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>【题解】CF1039B | LTb的博客</title>
+<link rel="shortcut icon" href="https://lycLTb.github.io//favicon.ico?v=1594625671858">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://lycLTb.github.io//styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="【题解】CF1039B | LTb的博客 - Atom Feed" href="https://lycLTb.github.io//atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="Link
+一道挺有意思的交互
+看自己的代码评测的时候有一种看着自己的孩子的感觉（？
+发现值域很大但是这个点每次变化的幅度很小（k≤10k \le 10k≤10）于是想到二分这个点所在的区间，缩小到一定范围之后在这个区间内随机询问位置。
+区间..." />
+    <meta name="keywords" content="はるまきごはん,题解,日常不灌水" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://lycLTb.github.io/">
+  <img class="avatar" src="https://lycLTb.github.io//images/avatar.png?v=1594625671858" alt="">
+  </a>
+  <h1 class="site-title">
+    LTb的博客
+  </h1>
+  <p class="site-description">
+    I wander in your never ending dreamless dreams.
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/lycLTb" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+        <a href="https://www.zhihu.com/people/ltb-35-93" target="_blank">
+          <i class="ri-zhihu-line"></i>
+        </a>
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              【题解】CF1039B
+            </h2>
+            <div class="post-info">
+              <span>
+                2020-07-13
+              </span>
+              <span>
+                2 min read
+              </span>
+              
+                <a href="https://lycLTb.github.io/tag/nGY4Tbzrv/" class="post-tag">
+                  # はるまきごはん
+                </a>
+              
+                <a href="https://lycLTb.github.io/tag/TJKQz1LEq/" class="post-tag">
+                  # 题解
+                </a>
+              
+                <a href="https://lycLTb.github.io/tag/YfF4dmNnM/" class="post-tag">
+                  # 日常不灌水
+                </a>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://lycLTb.github.io//post-images/solution-cf1039b.jpg" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p><a href="https://codeforces.com/contest/1039/problem/B">Link</a></p>
+<p>一道挺有意思的交互</p>
+<p>看自己的代码评测的时候有一种看着自己的孩子的感觉（？</p>
+<p>发现值域很大但是这个点每次变化的幅度很小（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi><mo>≤</mo><mn>10</mn></mrow><annotation encoding="application/x-tex">k \le 10</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83041em;vertical-align:-0.13597em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span></span></span></span>）于是想到二分这个点所在的区间，缩小到一定范围之后在这个区间内随机询问位置。</p>
+<p>区间大小理论最小值应该是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>4</mn><mi>k</mi></mrow><annotation encoding="application/x-tex">4k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord">4</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span> ，你可以取 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>5</mn><mi>k</mi></mrow><annotation encoding="application/x-tex">5k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord">5</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span> 或者 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>6</mn><mi>k</mi></mrow><annotation encoding="application/x-tex">6k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord">6</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span> 或者直接取 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>50</mn><mi mathvariant="normal">/</mi><mn>60</mn></mrow><annotation encoding="application/x-tex">50 / 60</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">5</span><span class="mord">0</span><span class="mord">/</span><span class="mord">6</span><span class="mord">0</span></span></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span> 很小所以无论怎么搞都无所谓（</p>
+<p>我的代码也许有不必要的特判（</p>
+<pre><code class="language-c++">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+#define int long long
+
+int n,k;
+string s;
+int query(int l,int r){
+	cout&lt;&lt;l&lt;&lt;' '&lt;&lt;r&lt;&lt;endl;
+	cin&gt;&gt;s;
+	if (s==&quot;Yes&quot;) return 1;
+	else return 0;
+}
+
+signed main()
+
+{
+	random_device rd;
+	cin&gt;&gt;n&gt;&gt;k;
+	if (n==1){
+		cout&lt;&lt;&quot;1 1&quot;&lt;&lt;endl;
+		return 0;
+	}
+
+	int l=1,r=n;
+	while (1){
+		l=max(1ll,l-k*2);r=min(n,r+k*2);//这里理论上不需要 k*2 只需要 k，但是这样会导致区间调整的太慢
+		int mid=l+r&gt;&gt;1;
+		int tmp=query(l,mid);
+		if (tmp==1) r=mid;
+		else l=mid+1;
+
+		if (l==r &amp;&amp; k==0){
+			cout&lt;&lt;l&lt;&lt;&quot; &quot;&lt;&lt;l&lt;&lt;endl;
+			cin&gt;&gt;s;
+			return 0;
+		}
+
+		if (l+6*k&gt;=r){
+			tmp=rd()%(r-l+1)+l;	
+			int res=query(tmp,tmp);
+			if (res==1) return 0;
+		}
+	}
+	return 0;
+}
+</code></pre>
+
+              </div>
+              <div class="toc-container">
+                
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://lycLTb.github.io/post/algorithms-review/">
+              <h3 class="post-title">
+                思博算法复习笔记
+              </h3>
+            </a>
+          </div>
+        
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '460c745c51801f936b40',
+    clientSecret: '93f7f3ab9e979f7591a1202cd2ec887b8d2d8c45',
+    repo: 'lycLTb.github.io',
+    owner: 'lycLTb',
+    admin: ['lycLTb'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
+
+        <div class="site-footer">
+  2020-2020 LTb ; Power by <a href="https://gridea.dev/">Gridea</a>
+  <a class="rss" href="https://lycLTb.github.io//atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
