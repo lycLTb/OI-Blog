@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lycLTb.github.io/</id>
     <title>LTb的博客</title>
-    <updated>2020-08-04T14:31:42.720Z</updated>
+    <updated>2020-08-04T14:32:50.514Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lycLTb.github.io/"/>
     <link rel="self" href="https://lycLTb.github.io/atom.xml"/>
@@ -12,8 +12,8 @@
     <rights>All rights reserved 2020, LTb的博客</rights>
     <entry>
         <title type="html"><![CDATA[大概是总结一下这几天正睿的数学]]></title>
-        <id>https://lycLTb.github.io/post/da-gai-shi-zong-jie-yi-xia-zhe-ji-tian-zheng-rui-de-shu-xue/</id>
-        <link href="https://lycLTb.github.io/post/da-gai-shi-zong-jie-yi-xia-zhe-ji-tian-zheng-rui-de-shu-xue/">
+        <id>https://lycLTb.github.io/post/zroi-math/</id>
+        <link href="https://lycLTb.github.io/post/zroi-math/">
         </link>
         <updated>2020-08-04T14:30:51.000Z</updated>
     </entry>
