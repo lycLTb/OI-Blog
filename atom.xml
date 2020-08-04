@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lycLTb.github.io/</id>
     <title>LTb的博客</title>
-    <updated>2020-08-04T14:37:41.276Z</updated>
+    <updated>2020-08-04T14:53:56.919Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lycLTb.github.io/"/>
     <link rel="self" href="https://lycLTb.github.io/atom.xml"/>
@@ -60,13 +60,6 @@
         <updated>2020-05-01T00:26:26.000Z</updated>
     </entry>
     <entry>
-        <title type="html"><![CDATA[lyc的做题记录]]></title>
-        <id>https://lycLTb.github.io/post/exercises/</id>
-        <link href="https://lycLTb.github.io/post/exercises/">
-        </link>
-        <updated>2020-04-30T13:10:30.000Z</updated>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[NOI Online 2 游记]]></title>
         <id>https://lycLTb.github.io/post/noi-online-2/</id>
         <link href="https://lycLTb.github.io/post/noi-online-2/">
@@ -79,5 +72,12 @@
         <link href="https://lycLTb.github.io/post/notes-math1/">
         </link>
         <updated>2020-04-01T15:07:56.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[lyc的板子]]></title>
+        <id>https://lycLTb.github.io/post/template/</id>
+        <link href="https://lycLTb.github.io/post/template/">
+        </link>
+        <updated>2020-03-27T10:27:52.000Z</updated>
     </entry>
 </feed>
