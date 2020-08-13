@@ -2175,7 +2175,7 @@ body {
     }
     .mist .site-title i {
       background: #FFFFFFfe;
-    }.box-shadow-wrapper {
+    }.subtitle{color: white;}.box-shadow-wrapper {
       box-shadow: none !important;
     }body {
       cursor: default;
