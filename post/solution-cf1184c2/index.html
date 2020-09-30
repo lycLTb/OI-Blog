@@ -9,7 +9,7 @@
 <meta name="description" content="退役鸽子博主
 &lt;meta name=&#34;referrer&#34; content=&#34;no-referrer&#34;/&gt;">
 <meta name="theme-color" content="#ced4da">
-<title>あぁ！ 夏を今もう一回 | LTb的博客</title>
+<title>【题解】CF1184C2 | LTb的博客</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1601470876591">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
@@ -39,8 +39,8 @@
 
 
 
-  <meta name="description" content="あぁ！ 夏を今もう一回" />
-  <meta name="keywords" content="orangestar,日常灌水" />
+  <meta name="description" content="【题解】CF1184C2" />
+  <meta name="keywords" content="アルセチ力,题解,日常不灌水" />
 </head>
 
 <body>
@@ -348,8 +348,8 @@
           <div class="section bg-color post post-page">
             <section class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://lycLTb.github.io/post/henceforth/">
-      あぁ！ 夏を今もう一回
+    <a class="post-title-link" href="https://lycLTb.github.io/post/solution-cf1184c2/">
+      【题解】CF1184C2
     </a>
   </h1>
   <div class="post-meta">
@@ -357,7 +357,7 @@
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span class="language" data-lan="publish">发布于</span>
-      <span class="publish-time" data-t="2020-05-22 21:57:49">2020-05-22</span>
+      <span class="publish-time" data-t="2020-09-30 21:00:20">2020-09-30</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
@@ -366,14 +366,20 @@
       <span class="pc-show language" data-lan="category-in">分类于</span>
       
       
-      <a href="https://lycLTb.github.io/tag/ZU8G-D2Fq/">
-        <span>orangestar</span>
+      <a href="https://lycLTb.github.io/tag/ej84zfSv8/">
+        <span>アルセチ力</span>
       </a>、
       
       
       
-      <a href="https://lycLTb.github.io/tag/lkVSsTGHr/">
-        <span>日常灌水</span>
+      <a href="https://lycLTb.github.io/tag/TJKQz1LEq/">
+        <span>题解</span>
+      </a>、
+      
+      
+      
+      <a href="https://lycLTb.github.io/tag/YfF4dmNnM/">
+        <span>日常不灌水</span>
       </a>
       
       
@@ -382,19 +388,129 @@
     
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>1<span class="language" data-lan="minute">分钟</span></span>
+      <span>5<span class="language" data-lan="minute">分钟</span></span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>12<span class="pc-show language" data-lan="words">字数</span></span>
+      <span>782<span class="pc-show language" data-lan="words">字数</span></span>
     </span>
     
   </div>
 </section>
             <div class="post-body next-md-body" id="post_body">
-              <p>我永远喜欢 Orangestar !</p>
-<p><a href="https://www.bilibili.com/video/BV1QT4y1u795">https://www.bilibili.com/video/BV1QT4y1u795</a></p>
+              <p>一个半径为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span></span> 的圆中所有点都对这个圆心有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 的贡献；同样地，一个点对以这个点为圆心，半径为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span></span> 的圆中所有的圆心都有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 的贡献。</p>
+<p>考虑曼哈顿距离转切比雪夫距离，这样之后一个半径为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span></span> 的“圆”就变成了一个边长 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mi>r</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2r+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 的正方形。</p>
+<p>把点按横坐标升序排序，枚举圆心的横坐标，对纵坐标建线段树即可动态维护这时答案的最大值。</p>
+<pre><code class="language-c++">// 2020.09.29
+// Code by LTb
+// #pragma GCC optimize(2)
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+// #define int long long
+#define fi first
+#define se second
+inline int read(){
+    int x=0,f=1;
+    char ch;
+    while(ch&lt;'0'||ch&gt;'9')  {if(ch=='-')f=-1;ch=getchar();}
+    while(ch&gt;='0'&amp;&amp;ch&lt;='9'){x=x*10+ch-'0';ch=getchar();}
+    return f*x;
+}
+
+const int MAXN=300005;
+const int MAX=2e6+5000;
+int n,rad;
+int ans=1;
+pair&lt;int,int&gt; a[MAXN];
+
+struct Segment_Tree{
+	const int INF=0x3f3f3f3f;
+	struct node{
+		int l,r;
+		int add,mx;
+	}st[MAX*8];
+	
+	void build(int p,int l,int r){
+		st[p].l=l;st[p].r=r;
+		if (l==r){
+			return;
+		}
+		int mid=l+r&gt;&gt;1;
+		build(p&lt;&lt;1,l,mid);
+		build(p&lt;&lt;1|1,mid+1,r);
+		st[p].mx=max(st[p&lt;&lt;1].mx,st[p&lt;&lt;1|1].mx);
+	}
+
+	void spread(int p){
+		st[p&lt;&lt;1].add+=st[p].add;
+		st[p&lt;&lt;1|1].add+=st[p].add;
+		st[p&lt;&lt;1].mx+=st[p].add;
+		st[p&lt;&lt;1|1].mx+=st[p].add;
+		st[p].add=0;
+	}
+
+	void change(int p,int l,int r,int c){
+		if (l&lt;=st[p].l&amp;&amp;st[p].r&lt;=r){
+			st[p].add+=c;
+			st[p].mx+=c;
+			return;
+		}
+		spread(p);
+		int mid=st[p].l+st[p].r&gt;&gt;1;
+		if (l&lt;=mid) change(p&lt;&lt;1,l,r,c);
+		if (r&gt;mid) change(p&lt;&lt;1|1,l,r,c);
+		st[p].mx=max(st[p&lt;&lt;1].mx,st[p&lt;&lt;1|1].mx);
+	}
+
+	int query_max(int p,int l,int r){
+		if (l&lt;=st[p].l &amp;&amp; st[p].r&lt;=r)
+			return st[p].mx;
+		spread(p);
+		int mid=st[p].l+st[p].r&gt;&gt;1,ans=-INF;
+		if (l&lt;=mid) ans=query_max(p&lt;&lt;1,l,r);
+		if (r&gt;mid) ans=max(ans,query_max(p&lt;&lt;1|1,l,r));
+		return ans;
+	}
+}seg;
+
+signed main()
+
+{
+	n=read();rad=read();
+	int mx=0;
+	for (int i=1;i&lt;=n;i++){
+		int x=read(),y=read();
+		int tmp=x;
+		a[i].fi=x+y+MAX;
+		a[i].se=x-y+MAX;
+		mx=max(mx,a[i].fi);
+	}
+
+	sort(a+1,a+1+n);
+
+	seg.build(1,1,MAX*2);
+	int l=1,r=1;
+
+	for (int i=a[1].fi;i&lt;=mx;i++){
+		while (r&lt;=n &amp;&amp; a[r].fi&lt;=i+rad){
+			seg.change(1,a[r].se-rad,a[r].se+rad,1);
+			r++;
+		}
+		while (l&lt;=n &amp;&amp; a[l].fi&lt;i-rad){
+			seg.change(1,a[l].se-rad,a[l].se+rad,-1);
+			l++;
+		}
+
+		ans=max(ans,seg.query_max(1,1,MAX*2));
+	}
+
+	cout&lt;&lt;ans&lt;&lt;endl;
+	return 0;
+}
+</code></pre>
+<p>小声bb：值域开到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>9</mn></msup></mrow><annotation encoding="application/x-tex">10^9</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">9</span></span></span></span></span></span></span></span></span></span></span> 的话其实也可做。</p>
+<p>考虑对于一个横坐标为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span> 的点，它对线段树做的修改只有可能在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>−</mo><mi>r</mi><mo separator="true">,</mo><mi>x</mi><mo>+</mo><mi>r</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">x-r,x+r+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.7777700000000001em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 这两个地方发生。于是我们只需要枚举这些点，原方法中“枚举圆心横坐标”这一操作的复杂度降至 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mi>n</mi></mrow><annotation encoding="application/x-tex">2n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord mathdefault">n</span></span></span></span>。线段树加上动态开点，总复杂度即可优化到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="script">O</mi><mo>(</mo><mi>n</mi><mi>log</mi><mo>⁡</mo><mi mathvariant="script">W</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\mathcal{O(n \log W)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathcal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathcal" style="margin-right:0.08222em;">W</span><span class="mclose">)</span></span></span></span></span>，其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="script">W</mi></mrow><annotation encoding="application/x-tex">\mathcal{W}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord"><span class="mord mathcal" style="margin-right:0.08222em;">W</span></span></span></span></span> 为值域。</p>
 
             </div>
             
@@ -407,7 +523,7 @@
     </li>
     <li class="post-copyright-link">
       <strong class="language" data-lan="link">本文链接：</strong>
-      <a href="https://lycLTb.github.io/post/henceforth/" title="あぁ！ 夏を今もう一回">https://lycLTb.github.io/post/henceforth/</a>
+      <a href="https://lycLTb.github.io/post/solution-cf1184c2/" title="【题解】CF1184C2">https://lycLTb.github.io/post/solution-cf1184c2/</a>
     </li>
     <li class="post-copyright-license">
       <strong class="language" data-lan="copyright">版权声明： </strong>
@@ -416,23 +532,21 @@
   </ul>
   <div class="tags">
     
-      <a href="https://lycLTb.github.io/tag/ZU8G-D2Fq/"># orangestar</a>
+      <a href="https://lycLTb.github.io/tag/ej84zfSv8/"># アルセチ力</a>
     
-      <a href="https://lycLTb.github.io/tag/lkVSsTGHr/"># 日常灌水</a>
+      <a href="https://lycLTb.github.io/tag/TJKQz1LEq/"># 题解</a>
+    
+      <a href="https://lycLTb.github.io/tag/YfF4dmNnM/"># 日常不灌水</a>
     
   </div>
   <div class="nav">
     <div class="nav-prev">
       
-        <i class="fa fa-chevron-left"></i>
-        <a class="nav-pc-next" title="Sublime Text 折腾笔记" href="https://lycLTb.github.io/post/sublime-text/">Sublime Text 折腾笔记</a class="nav-pc-next">
-        <a class="nav-mobile-prev" title="Sublime Text 折腾笔记" href="https://lycLTb.github.io/post/sublime-text/">上一篇</a>
-      
     </div>
     <div class="nav-next">
       
-        <a class="nav-pc-next" title="【题解】CF1354E" href="https://lycLTb.github.io/post/solution-cf1354e/">【题解】CF1354E</a>
-        <a class="nav-mobile-next" title="【题解】CF1354E" href="https://lycLTb.github.io/post/solution-cf1354e/">下一篇</a>
+        <a class="nav-pc-next" title="【题解】CF1401E" href="https://lycLTb.github.io/post/solution-cf1401e/">【题解】CF1401E</a>
+        <a class="nav-mobile-next" title="【题解】CF1401E" href="https://lycLTb.github.io/post/solution-cf1401e/">下一篇</a>
         <i class="fa fa-chevron-right"></i>
       
     </div>
