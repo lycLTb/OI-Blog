@@ -10,7 +10,7 @@
 &lt;meta name=&#34;referrer&#34; content=&#34;no-referrer&#34;/&gt;">
 <meta name="theme-color" content="#ced4da">
 <title>快速恢复智商指北 | LTb的博客</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1606049162541">
+<link rel="shortcut icon" href="/favicon.ico?v=1606049492974">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -1278,8 +1278,8 @@ signed main()
 		xx=1;
 		zz=0;
 		for (int i=2;i&amp;lt;=n;i++){
-			if (a[i]==n-2) yy=i; // 000...01 与 111...10 AND 一定等于 0
-			else if (a[i]==1) zz=i; // 也许一个难以理解的点是 (a[1]^a[yy])&amp;amp;(a[1]^a[zz]) == a[yy]&amp;amp;a[zz]
+			if (a[i]==n-2) yy=i;
+			else if (a[i]==1) zz=i; //随便钦定两个数使它们AND值为0
 		}
 	}
 	else{ // 若存在相等的数
