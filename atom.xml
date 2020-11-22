@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lycLTb.github.io/</id>
     <title>LTb的博客</title>
-    <updated>2020-11-21T14:10:58.674Z</updated>
+    <updated>2020-11-22T03:43:28.946Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lycLTb.github.io/"/>
     <link rel="self" href="https://lycLTb.github.io/atom.xml"/>
@@ -11,6 +11,13 @@
     <logo>https://lycLTb.github.io/images/avatar.png</logo>
     <icon>https://lycLTb.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, LTb的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[【题解】CF1451E1]]></title>
+        <id>https://lycLTb.github.io/post/solution-1451e1/</id>
+        <link href="https://lycLTb.github.io/post/solution-1451e1/">
+        </link>
+        <updated>2020-11-22T03:40:31.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[【专项训练计划】简单dp]]></title>
         <id>https://lycLTb.github.io/post/training-ez-dp/</id>
@@ -73,12 +80,5 @@
         <link href="https://lycLTb.github.io/post/sublime-text/">
         </link>
         <updated>2020-05-31T12:17:54.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[あぁ！ 夏を今もう一回]]></title>
-        <id>https://lycLTb.github.io/post/henceforth/</id>
-        <link href="https://lycLTb.github.io/post/henceforth/">
-        </link>
-        <updated>2020-05-22T13:57:49.000Z</updated>
     </entry>
 </feed>
