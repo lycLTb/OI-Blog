@@ -9,7 +9,7 @@
 <meta name="description" content="退役鸽子博主
 &lt;meta name=&#34;referrer&#34; content=&#34;no-referrer&#34;/&gt;">
 <meta name="theme-color" content="#ced4da">
-<title>NOI Online 2 游记 | LTb的博客</title>
+<title>【题解】CF1461F | LTb的博客</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1607851557192">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
@@ -39,8 +39,8 @@
 
 
 
-  <meta name="description" content="NOI Online 2 游记" />
-  <meta name="keywords" content="游记,はるまきごはん,日常灌水" />
+  <meta name="description" content="【题解】CF1461F" />
+  <meta name="keywords" content="アルセチ力,题解" />
 </head>
 
 <body>
@@ -191,8 +191,7 @@
       <div class="sidebar-body gemini" id="sidebar_body">
         
           
-            <div class="post-side-meta" id="post_side_meta">
-              
+            
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="/images/avatar.png"/>
@@ -262,199 +261,6 @@
 
 
 </div>
-            </div>
-            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
-              <div class="toc-box right-motion">
-  <div class="toc-wrapper auto-number auto"
-    id="toc_wrapper">
-    <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#day-1">Day 1</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-  </div>
-</div>
-
-<script>
-
-  let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1;
-  let active = 'active-show', activeClass = 'active-current';
-  let tocWrapper = document.querySelector('#toc_wrapper');
-  let tocContent = tocWrapper.children[0];
-  let autoNumber = tocWrapper && tocWrapper.classList.contains('auto-number');
-
-  function addTocNumber(elem, deep) {
-    if (!elem) {
-      return;
-    }
-    let prop = elem.__proto__;
-
-    if (prop === HTMLUListElement.prototype) {
-      for (let i = 0; i < elem.children.length; i++) {
-        addTocNumber(elem.children[i], deep + (i + 1) + '.');
-      }
-    } else if (prop === HTMLLIElement.prototype) {
-      // 保存li元素
-      if (elem.children[0] && elem.children[0].__proto__ === HTMLAnchorElement.prototype) {
-        lList.push(elem);
-      }
-      for (let i = 0; i < elem.children.length; i++) {
-        let cur = elem.children[i];
-        if (cur.__proto__ === HTMLAnchorElement.prototype) {
-          if (autoNumber) {
-            cur.text = deep + ' ' + cur.text;
-          }
-        } else if (cur.__proto__ === HTMLUListElement.prototype) {
-          addTocNumber(cur, deep);
-        }
-      }
-    }
-  }
-
-  function removeParentActiveClass() {
-    let parents = tocContent.querySelectorAll('.' + active)
-    parents.forEach(function (elem) {
-      elem.classList.remove(active);
-    });
-  }
-
-  function addActiveClass(index) {
-    if (index >= 0 && index < hList.length) {
-      lList[index].classList.add(activeClass);
-    }
-  }
-
-  function removeActiveClass(index) {
-    if (index >= 0 && index < hList.length) {
-      lList[index].classList.remove(activeClass);
-    }
-  }
-
-  function addActiveLiElemment(elem, parent) {
-    if (!elem || elem === parent) {
-      return;
-    } else {
-      if (elem.__proto__ === HTMLLIElement.prototype) {
-        elem.classList.add(active);
-      }
-      addActiveLiElemment(elem.parentElement, parent);
-    }
-  }
-
-  function showToc() {
-    if (tocWrapper) {
-      postBody = document.querySelector('#post_body');
-      for (let i = 0; i < postBody.children.length; i++) {
-        if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
-          hList.push(postBody.children[i]);
-        }
-      }
-      if (tocWrapper.classList.contains('compress')) {
-        tocContent.classList.add('closed');
-      } else if (tocWrapper.classList.contains('no_compress')) {
-        tocContent.classList.add('expanded');
-      } else {
-        if (hList.length > 10) {
-          active = 'active-hidden'
-          tocContent.classList.add('closed');
-        } else {
-          tocContent.classList.add('expanded');
-        }
-      }
-    }
-  }
-
-  (function () {
-    // 处理不是从#一级标题开始目录
-    if (tocContent.children.length === 1 && tocContent.children[0].__proto__ === HTMLLIElement.prototype) {
-      let con = tocContent.children[0].children[0];
-      tocContent.innerHTML = con.innerHTML;
-    }
-    let markdownItTOC = document.querySelector('.markdownIt-TOC');
-    let innerHeight = window.innerHeight;
-    markdownItTOC.style = `max-height: ${innerHeight - 80 > 0 ? innerHeight - 80 : innerHeight}px`
-    addTocNumber(tocContent, '');
-  })();
-
-  document.addEventListener('scroll', function (e) {
-    if (lList.length <= 0) {
-      return;
-    }
-    let scrollTop = document.scrollingElement.scrollTop + 10;
-    let dir;
-
-    if (lastTop - scrollTop > 0) {
-      dir = 'up';
-    } else {
-      dir = 'down';
-    }
-
-    lastTop = scrollTop;
-    if (scrollTop <= 0) {
-      if (lastIndex >= 0 && lastIndex < hList.length) {
-        lList[lastIndex].classList.remove(activeClass);
-      }
-      return;
-    }
-
-    let current = 0, hasFind = false;
-    for (let i = 0; i < hList.length; i++) {
-      if (hList[i].offsetTop > scrollTop) {
-        current = i;
-        hasFind = true;
-        break;
-      }
-    }
-    if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
-      current = hList.length - 1;
-    } else {
-      current--;
-    }
-    if (dir === 'down') {
-      if (current > lastIndex) {
-        addActiveClass(current);
-        removeActiveClass(lastIndex)
-        lastIndex = current;
-        removeParentActiveClass();
-        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
-      }
-    } else {
-      if (current < lastIndex) {
-        addActiveClass(current);
-        removeActiveClass(lastIndex);
-        lastIndex = current;
-        removeParentActiveClass();
-        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
-      }
-    }
-  });
-
-
-  window.addEventListener('load', function () {
-    showToc();
-    document.querySelector('#sidebar').style = 'display: block;';
-    tocWrapper.classList.add('toc-active');
-    setTimeout(function () {
-      if ("createEvent" in document) {
-        let evt = document.createEvent("HTMLEvents");
-        evt.initEvent("scroll", false, true);
-        document.dispatchEvent(evt);
-      }
-      else {
-        document.fireEvent("scroll");
-      }
-    }, 500)
-  })
-
-</script>
-            </div>
           
         
       </div>
@@ -542,8 +348,8 @@
           <div class="section bg-color post post-page">
             <section class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://lycLTb.github.io/post/noi-online-2/">
-      NOI Online 2 游记
+    <a class="post-title-link" href="https://lycLTb.github.io/post/solution-cf1461f/">
+      【题解】CF1461F
     </a>
   </h1>
   <div class="post-meta">
@@ -551,7 +357,7 @@
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span class="language" data-lan="publish">发布于</span>
-      <span class="publish-time" data-t="2020-04-25 11:30:49">2020-04-25</span>
+      <span class="publish-time" data-t="2020-12-13 17:23:49">2020-12-13</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
@@ -560,20 +366,14 @@
       <span class="pc-show language" data-lan="category-in">分类于</span>
       
       
-      <a href="https://lycLTb.github.io/tag/hCCp_z9dq/">
-        <span>游记</span>
+      <a href="https://lycLTb.github.io/tag/ej84zfSv8/">
+        <span>アルセチ力</span>
       </a>、
       
       
       
-      <a href="https://lycLTb.github.io/tag/nGY4Tbzrv/">
-        <span>はるまきごはん</span>
-      </a>、
-      
-      
-      
-      <a href="https://lycLTb.github.io/tag/lkVSsTGHr/">
-        <span>日常灌水</span>
+      <a href="https://lycLTb.github.io/tag/TJKQz1LEq/">
+        <span>题解</span>
       </a>
       
       
@@ -582,34 +382,178 @@
     
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>1<span class="language" data-lan="minute">分钟</span></span>
+      <span>5<span class="language" data-lan="minute">分钟</span></span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>125<span class="pc-show language" data-lan="words">字数</span></span>
+      <span>908<span class="pc-show language" data-lan="words">字数</span></span>
     </span>
     
   </div>
 </section>
             <div class="post-body next-md-body" id="post_body">
-              <h3 id="day-1">Day 1</h3>
-<p>8:30 开题<br>
-<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext>LaTeX</mtext></mrow><annotation encoding="application/x-tex">\LaTeX</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.89883em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">L</span><span class="mspace" style="margin-right:-0.36em;"></span><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.68333em;"><span style="top:-2.904999em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord text"><span class="mord textrm sizing reset-size6 size3">A</span></span></span></span></span></span><span class="mspace" style="margin-right:-0.15em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.46782999999999997em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord text"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span></span></span></span></span> 好评， Markdown 好评<br>
-先看一遍题</p>
-<p>欸这个T1怎么看着这么熟悉啊<br>
-是不是CF原题啊（<br>
-T2看上去很可做<br>
-T3是什么&amp;*^(%@$^</p>
-<p>群友报了T1的原题<br>
-果然写过（<br>
-直接把代码搬过来</p>
-<p>欸这个T2有白送的 50pt<br>
-先打了暴力</p>
-<p>后面就啥事没干了（</p>
-<p>草 T1没特判 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">k=1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 死了<br>
-还忽视了 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi><mo>≤</mo><mn>1</mn><msup><mn>0</mn><mn>6</mn></msup></mrow><annotation encoding="application/x-tex">t \le 10^6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mord mathdefault">t</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">6</span></span></span></span></span></span></span></span></span></span></span> 直接用的 <code>cin</code> 和 <code>cout</code><br>
-我没了啊（</p>
+              <p>大力分类讨论：</p>
+<ul>
+<li>没有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">*</mtext></mrow><annotation encoding="application/x-tex">\texttt{*}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.52083em;vertical-align:0em;"></span><span class="mord text"><span class="mord texttt">*</span></span></span></span></span>
+<ul>
+<li>显然</li>
+</ul>
+</li>
+<li>有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">*</mtext></mrow><annotation encoding="application/x-tex">\texttt{*}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.52083em;vertical-align:0em;"></span><span class="mord text"><span class="mord texttt">*</span></span></span></span></span>：
+<ul>
+<li>没有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">+</mtext></mrow><annotation encoding="application/x-tex">\texttt{+}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.53055em;vertical-align:0em;"></span><span class="mord text"><span class="mord texttt">+</span></span></span></span></span>
+<ul>
+<li>没有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">-</mtext></mrow><annotation encoding="application/x-tex">\texttt{-}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.53055em;vertical-align:0em;"></span><span class="mord text"><span class="mord texttt">-</span></span></span></span></span>：显然</li>
+<li>有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">-</mtext></mrow><annotation encoding="application/x-tex">\texttt{-}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.53055em;vertical-align:0em;"></span><span class="mord text"><span class="mord texttt">-</span></span></span></span></span>：找到第一个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>（如果存在的话）并在这个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> 前面一个位置填上 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">-</mtext></mrow><annotation encoding="application/x-tex">\texttt{-}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.53055em;vertical-align:0em;"></span><span class="mord text"><span class="mord texttt">-</span></span></span></span></span>，其他全部填 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">*</mtext></mrow><annotation encoding="application/x-tex">\texttt{*}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.52083em;vertical-align:0em;"></span><span class="mord text"><span class="mord texttt">*</span></span></span></span></span>。</li>
+</ul>
+</li>
+<li>有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">+</mtext></mrow><annotation encoding="application/x-tex">\texttt{+}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.53055em;vertical-align:0em;"></span><span class="mord text"><span class="mord texttt">+</span></span></span></span></span> 的情况是接下来的讨论重点是</li>
+</ul>
+</li>
+</ul>
+<p>首先注意到如果有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">+</mtext></mrow><annotation encoding="application/x-tex">\texttt{+}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.53055em;vertical-align:0em;"></span><span class="mord text"><span class="mord texttt">+</span></span></span></span></span>，则 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">-</mtext></mrow><annotation encoding="application/x-tex">\texttt{-}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.53055em;vertical-align:0em;"></span><span class="mord text"><span class="mord texttt">-</span></span></span></span></span> 根本不可能被用到（因为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn><mo>≤</mo><msub><mi>a</mi><mi>i</mi></msub><mo>≤</mo><mn>9</mn></mrow><annotation encoding="application/x-tex">0 \le a_i \le 9</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.7859700000000001em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">9</span></span></span></span>）</p>
+<p>一个很自然的想法是把整个序列以 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> 为分割点，分成几段分别处理。</p>
+<p>对于每一段，有一个非常 naive 的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>n</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">n^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi>p</mi></mrow><annotation encoding="application/x-tex">dp</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">d</span><span class="mord mathdefault">p</span></span></span></span>：设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><msub><mi>p</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">dp_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">d</span><span class="mord"><span class="mord mathdefault">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 为前 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span> 个字符能构成的最大值，每次枚举 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span></span></span></span>，从 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><msub><mi>p</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">dp_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">d</span><span class="mord"><span class="mord mathdefault">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 转移到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><msub><mi>p</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">dp_j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.980548em;vertical-align:-0.286108em;"></span><span class="mord mathdefault">d</span><span class="mord"><span class="mord mathdefault">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span> 表示把 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mi>i</mi><mo separator="true">,</mo><mi>j</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">[i,j]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathdefault">i</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span><span class="mclose">]</span></span></span></span> 中的数乘起来。显然无法通过：不仅会 TLE，数的乘积也会爆 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">long</mtext><mtext> </mtext><mtext mathvariant="monospace">long</mtext></mrow><annotation encoding="application/x-tex">\texttt{long long}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.22222em;"></span><span class="mord text"><span class="mord texttt">long long</span></span></span></span></span>。</p>
+<p>考虑几个优化：如果某一段 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mi>l</mi><mo separator="true">,</mo><mi>r</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">[l,r]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mclose">]</span></span></span></span> 的乘积大于一个常数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span></span></span></span>，则我们直接把 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mi>l</mi><mo separator="true">,</mo><mi>r</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">[l,r]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mclose">]</span></span></span></span> 中所有数乘起来。</p>
+<p>这个优化可以被形如 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>9</mn><mo separator="true">,</mo><mn>9</mn><mo separator="true">,</mo><mn>9</mn><mo>⋯</mo><mn>9</mn><mo separator="true">,</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">9,9,9 \cdots 9,1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">9</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">9</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">9</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner">⋯</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">9</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span></span></span></span> 的数据卡掉（最后一个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 前面应为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">+</mtext></mrow><annotation encoding="application/x-tex">\texttt{+}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.53055em;vertical-align:0em;"></span><span class="mord text"><span class="mord texttt">+</span></span></span></span></span>），所以在处理之前需要特判掉首尾的所有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>。</p>
+<p>官方题解中取 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>=</mo><mn>1</mn><msup><mn>0</mn><mn>16</mn></msup></mrow><annotation encoding="application/x-tex">P=10^{16}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">6</span></span></span></span></span></span></span></span></span></span></span></span>，实际上 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span></span></span></span> 的下界非常小，只需要确保 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>≥</mo><mn>2</mn><mi>n</mi></mrow><annotation encoding="application/x-tex">P \ge 2n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.13597em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord mathdefault">n</span></span></span></span> 即可。详细证明可以参考 <a href="https://codeforces.com/profile/arvindr9">arvindr9</a> 的 <a href="https://codeforces.com/blog/entry/85491?#comment-732087">comment</a>。</p>
+<p>第二个优化是对于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi>p</mi></mrow><annotation encoding="application/x-tex">dp</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">d</span><span class="mord mathdefault">p</span></span></span></span> 的：预处理 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mtext mathvariant="monospace">next</mtext><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\texttt{next}_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.70358em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord text"><span class="mord texttt">next</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，表示 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span> 之后第一个不是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 的数的位置。在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi>p</mi></mrow><annotation encoding="application/x-tex">dp</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">d</span><span class="mord mathdefault">p</span></span></span></span> 中枚举 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span></span></span></span> 时可以直接从 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span></span></span></span> 跳到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mtext mathvariant="monospace">next</mtext><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">\texttt{next}_j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.839688em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord text"><span class="mord texttt">next</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span> 而不是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>j</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">j+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>。于是这个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi>p</mi></mrow><annotation encoding="application/x-tex">dp</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">d</span><span class="mord mathdefault">p</span></span></span></span> 的复杂度变成了 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="script">O</mi><mo>(</mo><mi>l</mi><mi>e</mi><mi>n</mi><mo>⋅</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\mathcal{O(len \cdot x)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathcal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">e</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault">x</span><span class="mclose">)</span></span></span></span></span>，其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span> 表示一段中不为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 的数的个数。而上一个优化确保了 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>≤</mo><msub><mi>log</mi><mo>⁡</mo><mn>2</mn></msub><mi>P</mi></mrow><annotation encoding="application/x-tex">x \le \log_2 P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.93858em;vertical-align:-0.24414em;"></span><span class="mop"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.20696799999999996em;"><span style="top:-2.4558600000000004em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.24414em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span></span></span></span>，故复杂度正确。</p>
+<p>简洁起见，代码删去了<a href="https://www.luogu.com.cn/paste/cmtmxcj4">缺省源</a></p>
+<pre><code class="language-c++">// 2020.12.13
+// Code by LTb
+// #pragma GCC optimize(2)
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+// #define int long long
+#define debug puts(&quot;QwQ&quot;);
+
+const int MAXN=100005;
+int n;
+int a[MAXN];
+bool Plus,Minus,Multiple;
+int dp[MAXN],bel[MAXN];
+char ans[MAXN];
+int nex[MAXN];
+int P=1e7;
+
+void sol1(){
+	for (int i=2;i&lt;=n;i++)
+		if (Plus) ans[i]='+';
+		else ans[i]='-';
+}
+
+void sol2(){
+	for (int i=2;i&lt;=n;i++)
+		ans[i]='*';
+}
+
+void sol3(){
+	int pos=0;
+	for (int i=1;i&lt;=n;i++)
+		if (!pos &amp;&amp; a[i]==0) pos=i;
+
+	for (int i=2;i&lt;=n;i++){
+		if (i==pos) ans[i]='-';
+		else ans[i]='*';
+	}
+}
+
+void init(){
+	int cur=0;
+	for (int i=n;i&gt;=1;i--){
+		nex[i]=cur;
+		if (a[i]!=1) cur=i;
+	}
+}
+
+void foo(int l,int r){
+	int cnt=1;
+	dp[l-1]=0;
+	for (int i=l;i&lt;=r;i++){
+		if (cnt&lt;P) cnt*=a[i];
+		dp[i]=bel[i]=0;
+	}
+
+	if (cnt&gt;=P){
+		for (int i=l+1;i&lt;=r;i++)
+			ans[i]='*';
+		return ;
+	}
+
+	for (int i=l;i&lt;=r;i++){
+		cnt=1;
+		for (int j=i;j&lt;=r &amp;&amp; j;j=nex[j]){
+			cnt*=a[j];
+			if (dp[i-1]+cnt&gt;dp[j]){
+				dp[j]=dp[i-1]+cnt;
+				bel[j]=i-1;
+			}
+		}
+	}
+
+	int cur=r;
+	while (cur&gt;=l){
+		int tmp=bel[cur];
+		ans[tmp+1]='+';
+		for (int i=tmp+2;i&lt;=cur;i++)
+			ans[i]='*';
+
+		cur=tmp;
+	}
+}
+
+void sol4(){
+	init();
+	for (int i=1;i&lt;=n;i++){
+		if (a[i]==0){
+			ans[i+1]=ans[i]='+';
+			continue;
+		}
+
+		int cur=i;
+		while (cur&lt;n &amp;&amp; a[cur+1]!=0) cur++;
+
+		int l=i,r=cur;
+		while (l&lt;=r &amp;&amp; a[l]==1) ans[++l]='+';
+		while (l&lt;=r &amp;&amp; a[r]==1) ans[r--]='+';
+		if (l&lt;=r) foo(l,r);
+		i=cur;
+	}
+}
+
+void print(){
+	cout&lt;&lt;a[1];
+	for (int i=2;i&lt;=n;i++)
+		cout&lt;&lt;ans[i]&lt;&lt;a[i];
+	cout&lt;&lt;endl;
+}
+
+signed main()
+
+{
+	n=read();P=2*n;
+	for (int i=1;i&lt;=n;i++)
+		a[i]=read();
+
+	string allowed=readstr();
+	for (auto i:allowed){
+		if (i=='+') Plus=true;
+		else if (i=='-') Minus=true;
+		else Multiple=true;
+	}
+
+	if (!Multiple) sol1();
+	else{
+		if (!Plus &amp;&amp; !Minus) sol2();
+		else if (!Plus) sol3();
+		else sol4();
+	}
+
+	print();
+	return 0;
+}
+</code></pre>
 
             </div>
             
@@ -622,7 +566,7 @@ T3是什么&amp;*^(%@$^</p>
     </li>
     <li class="post-copyright-link">
       <strong class="language" data-lan="link">本文链接：</strong>
-      <a href="https://lycLTb.github.io/post/noi-online-2/" title="NOI Online 2 游记">https://lycLTb.github.io/post/noi-online-2/</a>
+      <a href="https://lycLTb.github.io/post/solution-cf1461f/" title="【题解】CF1461F">https://lycLTb.github.io/post/solution-cf1461f/</a>
     </li>
     <li class="post-copyright-license">
       <strong class="language" data-lan="copyright">版权声明： </strong>
@@ -631,25 +575,19 @@ T3是什么&amp;*^(%@$^</p>
   </ul>
   <div class="tags">
     
-      <a href="https://lycLTb.github.io/tag/hCCp_z9dq/"># 游记</a>
+      <a href="https://lycLTb.github.io/tag/ej84zfSv8/"># アルセチ力</a>
     
-      <a href="https://lycLTb.github.io/tag/nGY4Tbzrv/"># はるまきごはん</a>
-    
-      <a href="https://lycLTb.github.io/tag/lkVSsTGHr/"># 日常灌水</a>
+      <a href="https://lycLTb.github.io/tag/TJKQz1LEq/"># 题解</a>
     
   </div>
   <div class="nav">
     <div class="nav-prev">
       
-        <i class="fa fa-chevron-left"></i>
-        <a class="nav-pc-next" title="【学习笔记】组合数学 第5章" href="https://lycLTb.github.io/post/comb-5/">【学习笔记】组合数学 第5章</a class="nav-pc-next">
-        <a class="nav-mobile-prev" title="【学习笔记】组合数学 第5章" href="https://lycLTb.github.io/post/comb-5/">上一篇</a>
-      
     </div>
     <div class="nav-next">
       
-        <a class="nav-pc-next" title="【学习笔记】数论" href="https://lycLTb.github.io/post/notes-math1/">【学习笔记】数论</a>
-        <a class="nav-mobile-next" title="【学习笔记】数论" href="https://lycLTb.github.io/post/notes-math1/">下一篇</a>
+        <a class="nav-pc-next" title="【题解】CF1332F" href="https://lycLTb.github.io/post/solution-cf1332f/">【题解】CF1332F</a>
+        <a class="nav-mobile-next" title="【题解】CF1332F" href="https://lycLTb.github.io/post/solution-cf1332f/">下一篇</a>
         <i class="fa fa-chevron-right"></i>
       
     </div>
