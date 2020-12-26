@@ -10,7 +10,7 @@
 &lt;meta name=&#34;referrer&#34; content=&#34;no-referrer&#34;/&gt;">
 <meta name="theme-color" content="#ced4da">
 <title>lyc要填的坑 | LTb的博客</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1608953082696">
+<link rel="shortcut icon" href="/favicon.ico?v=1608998988771">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -1884,6 +1884,64 @@ signed main()
 	}
 
 	cout&amp;lt;&amp;lt;dp[n][0][0]&amp;lt;&amp;lt;endl;
+	return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;1107e-vasya-and-binary-string&#34;&gt;1107E Vasya and Binary String&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.luogu.com.cn/problem/CF1107E&#34;&gt;link&lt;/a&gt;（*2400）&lt;br&gt;
+非常玄妙的 dp（&lt;br&gt;
+（说起来 “dp” 这种东西是不是不应该写成 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mtext&gt;LaTeX&lt;/mtext&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\LaTeX&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.89883em;vertical-align:-0.2155em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord text&#34;&gt;&lt;span class=&#34;mord textrm&#34;&gt;L&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:-0.36em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;vlist-t&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.68333em;&#34;&gt;&lt;span style=&#34;top:-2.904999em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord text&#34;&gt;&lt;span class=&#34;mord textrm sizing reset-size6 size3&#34;&gt;A&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:-0.15em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord text&#34;&gt;&lt;span class=&#34;mord textrm&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:-0.1667em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.46782999999999997em;&#34;&gt;&lt;span style=&#34;top:-2.7845em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord text&#34;&gt;&lt;span class=&#34;mord textrm&#34;&gt;E&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.2155em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:-0.125em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord textrm&#34;&gt;X&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;（&lt;br&gt;
+看 &lt;a href=&#34;https://www.luogu.com.cn/blog/duyi/solution-cf1107e&#34;&gt;dls 题解&lt;/a&gt; 吧（&lt;br&gt;
+感觉这种题就是出题人一拍脑子想出来一个绝妙的 dp 方法，然后用这个方法出了一个题&lt;br&gt;
+但是这种思路正常人根本想不到吧（&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;// 2020.12.26
+// Code by LTb
+// #pragma GCC optimize(2)
+#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+#define int long long
+
+const int MAXN=105;
+int n;
+bool s[MAXN];
+int a[MAXN];
+int dp[MAXN][MAXN][MAXN];
+
+signed main()
+
+{
+	n=read();
+	for (int i=1;i&amp;lt;=n;i++)
+		s[i]=readch()==&#39;1&#39;;
+
+	for (int i=1;i&amp;lt;=n;i++)
+		a[i]=read();
+
+	for (int i=1;i&amp;lt;=n;i++)
+		for (int j=i;j&amp;lt;=n;j++)
+			for (int k=0;k+j&amp;lt;=n;k++)
+				dp[i][j][k]=-1e15;
+
+	for (int i=1;i&amp;lt;=n;i++)
+		for (int j=0;i+j&amp;lt;=n;j++){
+			dp[i][i][j]=a[j+1];
+		}
+
+	for (int len=2;len&amp;lt;=n;len++){
+		for (int i=1;i+len-1&amp;lt;=n;i++){
+			int j=i+len-1;
+			for (int k=0;k+j&amp;lt;=n;k++)
+				chmax(dp[i][j][k],dp[i][j-1][0]+a[k+1]);
+			
+			for (int k=0;k+j&amp;lt;=n;k++){
+				for (int l=i;l&amp;lt;j;l++){
+					if (s[l]==s[j]) chmax(dp[i][j][k],dp[i][l][k+1]+dp[l+1][j-1][0]);
+				}
+			}
+		}
+	}
+
+	cout&amp;lt;&amp;lt;dp[1][n][0]&amp;lt;&amp;lt;endl;
 	return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;
