@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lycLTb.github.io/</id>
     <title>LTb的博客</title>
-    <updated>2020-12-29T15:26:08.810Z</updated>
+    <updated>2021-01-09T10:09:53.578Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lycLTb.github.io/"/>
     <link rel="self" href="https://lycLTb.github.io/atom.xml"/>
@@ -10,7 +10,7 @@
 &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;/&gt;</subtitle>
     <logo>https://lycLTb.github.io/images/avatar.png</logo>
     <icon>https://lycLTb.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, LTb的博客</rights>
+    <rights>All rights reserved 2021, LTb的博客</rights>
     <entry>
         <title type="html"><![CDATA[【题解】CF1461F]]></title>
         <id>https://lycLTb.github.io/post/solution-cf1461f/</id>
