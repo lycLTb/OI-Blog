@@ -10,7 +10,7 @@
 &lt;meta name=&#34;referrer&#34; content=&#34;no-referrer&#34;/&gt;">
 <meta name="theme-color" content="#ced4da">
 <title>【题解】USACO 2020Feb Silver Triangles | LTb的博客</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1610206807939">
+<link rel="shortcut icon" href="/favicon.ico?v=1610260946482">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -1221,23 +1221,23 @@ signed main()
           &lt;p&gt;= =&lt;/p&gt;
 &lt;p&gt;去补了补正睿暑假的图论内容（&lt;/p&gt;
 &lt;p&gt;其实很久以前全都学过但是也仅限于学过算法 = =&lt;/p&gt;
-&lt;p&gt;所以这个学习笔记主要还是挂一些例题，Tricks 和一些没学过的东西（Kruskal 重构树啥的）&lt;/p&gt;
+&lt;p&gt;所以这个学习笔记主要还是挂一些例题，常见的技巧和一些没学过的东西（Kruskal 重构树啥的）&lt;/p&gt;
 &lt;h3 id=&#34;欧拉路径-回路&#34;&gt;欧拉路径 / 回路&lt;/h3&gt;
 &lt;h4 id=&#34;瞎扯&#34;&gt;瞎扯&lt;/h4&gt;
-&lt;p&gt;欧拉路径指经过每一条边恰好一次的路径&lt;/p&gt;
-&lt;p&gt;欧拉回路指经过每一条边恰好一次的&lt;strong&gt;回路&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;欧拉路径指经过每一条边恰好一次的路径，欧拉回路指经过每一条边恰好一次的&lt;strong&gt;回路&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;欧拉回路可以使用简单的 dfs 求出，但是在遍历边 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mo separator=&#34;true&#34;&gt;,&lt;/mo&gt;&lt;mi&gt;v&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;(u,v)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;mpunct&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.03588em;&#34;&gt;v&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 时需要先把 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;v&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;v&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.43056em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.03588em;&#34;&gt;v&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 遍历完再加边 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;v&lt;/mi&gt;&lt;mo separator=&#34;true&#34;&gt;,&lt;/mo&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;(v,u)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.03588em;&#34;&gt;v&lt;/span&gt;&lt;span class=&#34;mpunct&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;。&lt;/p&gt;
+&lt;h4 id=&#34;技巧&#34;&gt;技巧&lt;/h4&gt;
+&lt;p&gt;欧拉回路有两个最重要的性质：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;经过每条边恰好一次&lt;/li&gt;
+&lt;li&gt;到达每个点的次数等于离开每个点的次数&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;举例来说，例题 2 利用了性质 1，例题 3 利用了性质 2。&lt;/p&gt;
 &lt;h4 id=&#34;例题&#34;&gt;例题&lt;/h4&gt;
 &lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://loj.ac/p/10105&#34;&gt;板子&lt;/a&gt; 以及 &lt;a href=&#34;https://loj.ac/s/1030774&#34;&gt;Code&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.luogu.com.cn/problem/P1341&#34;&gt;洛谷 - 无序字母对&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.luogu.com.cn/problem/CF547D&#34;&gt;CodeForces - 547D Mike and Fish&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://loj.ac/p/10105&#34;&gt;板子&lt;/a&gt; 以及 &lt;a href=&#34;https://loj.ac/s/1030774&#34;&gt;Code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.luogu.com.cn/problem/P1341&#34;&gt;洛谷 - 无序字母对&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.luogu.com.cn/problem/CF547D&#34;&gt;CodeForces - 547D Mike and Fish&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;拓扑排序&#34;&gt;拓扑排序&lt;/h3&gt;
 &lt;p&gt;是人都会&lt;/p&gt;
