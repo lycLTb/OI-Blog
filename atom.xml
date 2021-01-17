@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lycLTb.github.io/</id>
     <title>LTb的博客</title>
-    <updated>2021-01-17T11:13:04.389Z</updated>
+    <updated>2021-01-17T11:15:34.146Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lycLTb.github.io/"/>
     <link rel="self" href="https://lycLTb.github.io/atom.xml"/>
@@ -17,6 +17,16 @@
         <link href="https://lycLTb.github.io/post/solution-cf1473f/">
         </link>
         <updated>2021-01-17T11:12:06.000Z</updated>
+        <summary type="html"><![CDATA[<p>好哦 是独立（并没有）做出来的第一道 *2700</p>
+<p>看到前几天的 edu yzhang 切了 F，于是跑去看了看题</p>
+<p>发现是个网络流，于是捡起了快一年没碰的网络流复习（</p>
+<p>注意到这个有先决条件的选数 以及数据范围都长得很像最大权闭合子图模型，于是用这个模型去做。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>好哦 是独立（并没有）做出来的第一道 *2700</p>
+<p>看到前几天的 edu yzhang 切了 F，于是跑去看了看题</p>
+<p>发现是个网络流，于是捡起了快一年没碰的网络流复习（</p>
+<p>注意到这个有先决条件的选数 以及数据范围都长得很像最大权闭合子图模型，于是用这个模型去做。</p>
+]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[【学习笔记】生成函数入门]]></title>
