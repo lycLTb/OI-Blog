@@ -10,7 +10,7 @@
 &lt;meta name=&#34;referrer&#34; content=&#34;no-referrer&#34;/&gt;">
 <meta name="theme-color" content="#ced4da">
 <title>lyc的资料整理 | LTb的博客</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1611360619657">
+<link rel="shortcut icon" href="/favicon.ico?v=1611390926260">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -1344,9 +1344,8 @@ H(x) = G(x) \cdot F(x) = (1+x)^{n+m} = \sum\limits_{k\ge 0} \binom{n+m}{k} x^k
       <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://lycLTb.github.io/post/notes-ez-graphs/"" data-c="
           &lt;p&gt;= =&lt;/p&gt;
-&lt;p&gt;去补了补正睿暑假的图论内容（&lt;/p&gt;
-&lt;p&gt;其实很久以前全都学过但是也仅限于学过算法 = =&lt;/p&gt;
-&lt;p&gt;所以这个学习笔记主要还是挂一些例题，常见的技巧和一些没学过的东西（Kruskal 重构树啥的）&lt;/p&gt;
+&lt;p&gt;发现自己啥都不会（&lt;/p&gt;
+&lt;p&gt;去补了补正睿暑假的内容（&lt;/p&gt;
 &lt;h3 id=&#34;欧拉路径-回路&#34;&gt;欧拉路径 / 回路&lt;/h3&gt;
 &lt;h4 id=&#34;瞎扯&#34;&gt;瞎扯&lt;/h4&gt;
 &lt;p&gt;欧拉路径指经过每一条边恰好一次的路径，欧拉回路指经过每一条边恰好一次的&lt;strong&gt;回路&lt;/strong&gt;。&lt;/p&gt;
@@ -1371,7 +1370,7 @@ H(x) = G(x) \cdot F(x) = (1+x)^{n+m} = \sum\limits_{k\ge 0} \binom{n+m}{k} x^k
 &lt;p&gt;值得注意的是，&lt;strong&gt;路径压缩加上按秩合并&lt;/strong&gt;的并查集复杂度才是反阿克曼函数级别的，只有其中一个的话是 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;log&lt;/mi&gt;&lt;mo&gt;⁡&lt;/mo&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;O(\log n)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.02778em;&#34;&gt;O&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mop&#34;&gt;lo&lt;span style=&#34;margin-right:0.01389em;&#34;&gt;g&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 的。&lt;/p&gt;
 &lt;h4 id=&#34;例题-2&#34;&gt;例题&lt;/h4&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.luogu.com.cn/problem/P2024&#34;&gt;洛谷 - 食物链&lt;/a&gt; 以及 &lt;a href=&#34;https://www.luogu.com.cn/paste/q0xvmw4b&#34;&gt;Code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.luogu.com.cn/problem/P2024&#34;&gt;食物链&lt;/a&gt; 以及 &lt;a href=&#34;https://www.luogu.com.cn/paste/q0xvmw4b&#34;&gt;Code&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://loj.ac/p/2594&#34;&gt;「NOIP2010」关押罪犯&lt;/a&gt; 以及 &lt;a href=&#34;https://loj.ac/s/1037151&#34;&gt;Code&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.luogu.com.cn/problem/CF1250E&#34;&gt;CF1250E The Coronation&lt;/a&gt; 以及 &lt;a href=&#34;https://codeforces.com/contest/1250/submission/104512819&#34;&gt;Code&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
@@ -1379,9 +1378,13 @@ H(x) = G(x) \cdot F(x) = (1+x)^{n+m} = \sum\limits_{k\ge 0} \binom{n+m}{k} x^k
 &lt;p&gt;最短路树（图）即当确定一点 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;u&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.43056em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;u&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 时，对于所有点 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;v&lt;/mi&gt;&lt;mpadded width=&#34;0px&#34;&gt;&lt;mo&gt;&lt;/mo&gt;&lt;/mpadded&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;v\not = u&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.8888799999999999em;vertical-align:-0.19444em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.03588em;&#34;&gt;v&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.69444em;&#34;&gt;&lt;span style=&#34;top:-3em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;rlap&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.8888799999999999em;vertical-align:-0.19444em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;inner&#34;&gt;&lt;span class=&#34;mrel&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;fix&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.19444em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.36687em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.43056em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;u&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 只保留 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mo separator=&#34;true&#34;&gt;,&lt;/mo&gt;&lt;mi&gt;v&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;(u,v)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;mpunct&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.03588em;&#34;&gt;v&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 最短路上的边形成的树。&lt;/p&gt;
 &lt;h4 id=&#34;例题-3&#34;&gt;例题&lt;/h4&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.luogu.com.cn/problem/P4568&#34;&gt;洛谷 - [JLOI2011]飞行路线&lt;/a&gt; 以及 &lt;a href=&#34;https://www.luogu.com.cn/paste/h8hl6sue&#34;&gt;Code&lt;/a&gt; - 分层图最短路&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.luogu.com.cn/problem/P4568&#34;&gt;「JLOI2011」飞行路线&lt;/a&gt; 以及 &lt;a href=&#34;https://www.luogu.com.cn/paste/h8hl6sue&#34;&gt;Code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://loj.ac/p/6009&#34;&gt;「网络流 24 题」软件补丁&lt;/a&gt; 以及 &lt;a href=&#34;https://loj.ac/s/1043704&#34;&gt;Code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.luogu.com.cn/problem/P1948&#34;&gt;「USACO08JAN」Telephone Lines S&lt;/a&gt; 以及 &lt;a href=&#34;https://www.luogu.com.cn/paste/i15l0qb1&#34;&gt;Code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://loj.ac/p/10081&#34;&gt;「USACO 2011 Jan. Gold」道路与航线&lt;/a&gt; 以及 &lt;a href=&#34;https://loj.ac/s/1043944&#34;&gt;Code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://loj.ac/p/2590&#34;&gt;「NOIP2009」最优贸易&lt;/a&gt; 以及 &lt;a href=&#34;https://loj.ac/s/1043859&#34;&gt;Code&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-">【学习笔记】基础图论</a>
+">【学习笔记】基础的各种东西</a>
       </div>
       
       <div class="item">

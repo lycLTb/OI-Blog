@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lycLTb.github.io/</id>
     <title>LTb的博客</title>
-    <updated>2021-01-23T00:13:37.310Z</updated>
+    <updated>2021-01-23T08:35:41.973Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lycLTb.github.io/"/>
     <link rel="self" href="https://lycLTb.github.io/atom.xml"/>
@@ -36,7 +36,7 @@
         <updated>2021-01-15T15:26:20.000Z</updated>
     </entry>
     <entry>
-        <title type="html"><![CDATA[【学习笔记】基础图论]]></title>
+        <title type="html"><![CDATA[【学习笔记】基础的各种东西]]></title>
         <id>https://lycLTb.github.io/post/notes-ez-graphs/</id>
         <link href="https://lycLTb.github.io/post/notes-ez-graphs/">
         </link>
