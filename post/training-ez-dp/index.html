@@ -10,7 +10,7 @@
 &lt;meta name=&#34;referrer&#34; content=&#34;no-referrer&#34;/&gt;">
 <meta name="theme-color" content="#ced4da">
 <title>【专项训练计划】简单dp | LTb的博客</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1611392296799">
+<link rel="shortcut icon" href="/favicon.ico?v=1611497406250">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -1878,10 +1878,11 @@ H(x) = G(x) \cdot F(x) = (1+x)^{n+m} = \sum\limits_{k\ge 0} \binom{n+m}{k} x^k
       </div>
       
       <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://lycLTb.github.io/post/notes-ez-graphs/"" data-c="
+        <a class="result-title" style="opacity: 0;" href="https://lycLTb.github.io/post/note-basic-algos/"" data-c="
           &lt;p&gt;= =&lt;/p&gt;
 &lt;p&gt;发现自己啥都不会（&lt;/p&gt;
 &lt;p&gt;去补了补正睿暑假的内容（&lt;/p&gt;
+&lt;p&gt;能找到题的话会尽量把题交到代码公开的 OJ 上，找不到就把代码挂洛谷剪贴板。&lt;/p&gt;
 &lt;h3 id=&#34;欧拉路径-回路&#34;&gt;欧拉路径 / 回路&lt;/h3&gt;
 &lt;h4 id=&#34;瞎扯&#34;&gt;瞎扯&lt;/h4&gt;
 &lt;p&gt;欧拉路径指经过每一条边恰好一次的路径，欧拉回路指经过每一条边恰好一次的&lt;strong&gt;回路&lt;/strong&gt;。&lt;/p&gt;
@@ -1896,8 +1897,8 @@ H(x) = G(x) \cdot F(x) = (1+x)^{n+m} = \sum\limits_{k\ge 0} \binom{n+m}{k} x^k
 &lt;h4 id=&#34;例题&#34;&gt;例题&lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;https://loj.ac/p/10105&#34;&gt;板子&lt;/a&gt; 以及 &lt;a href=&#34;https://loj.ac/s/1030774&#34;&gt;Code&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.luogu.com.cn/problem/P1341&#34;&gt;洛谷 - 无序字母对&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.luogu.com.cn/problem/CF547D&#34;&gt;CodeForces - 547D Mike and Fish&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.luogu.com.cn/problem/P1341&#34;&gt;无序字母对&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.luogu.com.cn/problem/CF547D&#34;&gt;CF547D Mike and Fish&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;拓扑排序&#34;&gt;拓扑排序&lt;/h3&gt;
 &lt;p&gt;是人都会&lt;/p&gt;
@@ -1916,9 +1917,33 @@ H(x) = G(x) \cdot F(x) = (1+x)^{n+m} = \sum\limits_{k\ge 0} \binom{n+m}{k} x^k
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.luogu.com.cn/problem/P4568&#34;&gt;「JLOI2011」飞行路线&lt;/a&gt; 以及 &lt;a href=&#34;https://www.luogu.com.cn/paste/h8hl6sue&#34;&gt;Code&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://loj.ac/p/6009&#34;&gt;「网络流 24 题」软件补丁&lt;/a&gt; 以及 &lt;a href=&#34;https://loj.ac/s/1043704&#34;&gt;Code&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.luogu.com.cn/problem/P1948&#34;&gt;「USACO08JAN」Telephone Lines S&lt;/a&gt; 以及 &lt;a href=&#34;https://www.luogu.com.cn/paste/i15l0qb1&#34;&gt;Code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.luogu.com.cn/problem/P1948&#34;&gt;「USACO 2008 Jan. Silver」Telephone Lines&lt;/a&gt; 以及 &lt;a href=&#34;https://www.luogu.com.cn/paste/i15l0qb1&#34;&gt;Code&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://loj.ac/p/10081&#34;&gt;「USACO 2011 Jan. Gold」道路与航线&lt;/a&gt; 以及 &lt;a href=&#34;https://loj.ac/s/1043944&#34;&gt;Code&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://loj.ac/p/2590&#34;&gt;「NOIP2009」最优贸易&lt;/a&gt; 以及 &lt;a href=&#34;https://loj.ac/s/1043859&#34;&gt;Code&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;矩阵快速幂&#34;&gt;矩阵快速幂&lt;/h3&gt;
+&lt;h4 id=&#34;瞎扯-2&#34;&gt;瞎扯&lt;/h4&gt;
+&lt;p&gt;邻接矩阵快速幂和普通的没啥区别，只是转移矩阵经常长得像邻接矩阵（&lt;/p&gt;
+&lt;p&gt;附赠 &lt;a href=&#34;https://loj.ac/s/1044648&#34;&gt;封装板子&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;tips&#34;&gt;Tips&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;注意广义矩阵乘法的单位矩阵也是会变的，如果单位矩阵不好推的话就换个写法&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mo separator=&#34;true&#34;&gt;,&lt;/mo&gt;&lt;mi&gt;j&lt;/mi&gt;&lt;mo separator=&#34;true&#34;&gt;,&lt;/mo&gt;&lt;mi&gt;k&lt;/mi&gt;&lt;mo&gt;→&lt;/mo&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mo separator=&#34;true&#34;&gt;,&lt;/mo&gt;&lt;mi&gt;k&lt;/mi&gt;&lt;mo separator=&#34;true&#34;&gt;,&lt;/mo&gt;&lt;mi&gt;j&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;i,j,k \to i,k,j&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.8888799999999999em;vertical-align:-0.19444em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mpunct&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.05724em;&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;mpunct&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.03148em;&#34;&gt;k&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;→&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.8888799999999999em;vertical-align:-0.19444em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mpunct&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.03148em;&#34;&gt;k&lt;/span&gt;&lt;span class=&#34;mpunct&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.05724em;&#34;&gt;j&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;初始矩阵的行数为 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;1&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.64444em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;，所以它与一个 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;n \times n&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.66666em;vertical-align:-0.08333em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;×&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.43056em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;n&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 的转移矩阵做乘法是 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;O(n^2)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1.064108em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.02778em;&#34;&gt;O&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.8141079999999999em;&#34;&gt;&lt;span style=&#34;top:-3.063em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 而不是 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/msup&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;O(n^3)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1.064108em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.02778em;&#34;&gt;O&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.8141079999999999em;&#34;&gt;&lt;span style=&#34;top:-3.063em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;3&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 的，可以利用这一点来优化&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;例题-4&#34;&gt;例题&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.luogu.com.cn/problem/P1962&#34;&gt;斐波那契数列&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.luogu.com.cn/problem/P2044&#34;&gt;「NOI2012」 随机数生成器&lt;/a&gt; 以及 &lt;a href=&#34;https://loj.ac/s/1044200&#34;&gt;Code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.luogu.com.cn/problem/P3216&#34;&gt;「HNOI2011」数学作业&lt;/a&gt; 以及 &lt;a href=&#34;https://darkbzoj.tk/submission/106208&#34;&gt;Code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.luogu.com.cn/problem/P4838&#34;&gt;P哥破解密码&lt;/a&gt; 以及 &lt;a href=&#34;https://www.luogu.com.cn/paste/jrcjrg12&#34;&gt;Code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.luogu.com.cn/problem/P5678&#34;&gt;「GZOI2017」河神&lt;/a&gt; 以及 &lt;a href=&#34;https://www.luogu.com.cn/paste/2halikwb&#34;&gt;Code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.luogu.com.cn/problem/P4159&#34;&gt;「SCOI2009」迷路&lt;/a&gt; 以及 &lt;a href=&#34;https://loj.ac/s/1044494&#34;&gt;Code&lt;/a&gt;，洛谷过了但是 loj 莫名 RE&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.luogu.com.cn/problem/P2151&#34;&gt;「SDOI2009」HH 去散步&lt;/a&gt; 以及 &lt;a href=&#34;https://darkbzoj.tk/submission/106344&#34;&gt;Code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.luogu.com.cn/problem/P2579&#34;&gt;「ZJOI2005」沼泽鳄鱼&lt;/a&gt; 以及 &lt;a href=&#34;https://darkbzoj.tk/submission/106375&#34;&gt;Code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.luogu.com.cn/problem/P5789&#34;&gt;「TJOI2017」可乐（数据加强版）&lt;/a&gt; 以及 &lt;a href=&#34;https://darkbzoj.tk/submission/106380&#34;&gt;Code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.luogu.com.cn/problem/P2886&#34;&gt;「USACO 2007 Nov. Gold」Cow Relays&lt;/a&gt; 以及 &lt;a href=&#34;https://www.luogu.com.cn/paste/j2t09793&#34;&gt;Code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://loj.ac/p/3339&#34;&gt;「NOI2020」美食家&lt;/a&gt; 以及 &lt;a href=&#34;https://loj.ac/s/1044979&#34;&gt;Code&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 ">【学习笔记】基础的各种东西</a>
       </div>
