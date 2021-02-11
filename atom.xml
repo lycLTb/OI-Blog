@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lycLTb.github.io/</id>
     <title>LTb的博客</title>
-    <updated>2021-01-24T14:17:26.075Z</updated>
+    <updated>2021-02-11T05:25:53.366Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lycLTb.github.io/"/>
     <link rel="self" href="https://lycLTb.github.io/atom.xml"/>
@@ -11,6 +11,13 @@
     <logo>https://lycLTb.github.io/images/avatar.png</logo>
     <icon>https://lycLTb.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, LTb的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[至今为止的 OI 生涯回忆录]]></title>
+        <id>https://lycLTb.github.io/post/act-as-an-OIer-till-now/</id>
+        <link href="https://lycLTb.github.io/post/act-as-an-OIer-till-now/">
+        </link>
+        <updated>2021-02-11T05:22:10.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[【题解】CF1473F]]></title>
         <id>https://lycLTb.github.io/post/solution-cf1473f/</id>
@@ -139,18 +146,5 @@
         <link href="https://lycLTb.github.io/post/csp-noip-2020/">
         </link>
         <updated>2020-10-11T08:10:29.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[【题解】CF1184C2]]></title>
-        <id>https://lycLTb.github.io/post/solution-cf1184c2/</id>
-        <link href="https://lycLTb.github.io/post/solution-cf1184c2/">
-        </link>
-        <updated>2020-09-30T13:00:20.000Z</updated>
-        <summary type="html"><![CDATA[<p>一个半径为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span></span> 的圆中所有点都对这个圆心有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 的贡献；同样地，一个点对以这个点为圆心，半径为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span></span> 的圆中所有的圆心都有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 的贡献。</p>
-<p>考虑曼哈顿距离转切比雪夫距离，这样之后一个半径为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span></span> 的“圆”就变成了一个边长 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mi>r</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2r+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 的正方形。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>一个半径为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span></span> 的圆中所有点都对这个圆心有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 的贡献；同样地，一个点对以这个点为圆心，半径为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span></span> 的圆中所有的圆心都有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 的贡献。</p>
-<p>考虑曼哈顿距离转切比雪夫距离，这样之后一个半径为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span></span> 的“圆”就变成了一个边长 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mi>r</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2r+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 的正方形。</p>
-]]></content>
     </entry>
 </feed>
