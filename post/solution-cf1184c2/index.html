@@ -10,7 +10,7 @@
 &lt;meta name=&#34;referrer&#34; content=&#34;no-referrer&#34;/&gt;">
 <meta name="theme-color" content="#ced4da">
 <title>【题解】CF1184C2 | LTb的博客</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1613231963016">
+<link rel="shortcut icon" href="/favicon.ico?v=1613317659551">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -1240,18 +1240,18 @@ H(x) = G(x) \cdot F(x) = (1+x)^{n+m} = \sum\limits_{k\ge 0} \binom{n+m}{k} x^k
 &lt;h4 id=&#34;例题-2&#34;&gt;例题&lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.luogu.com.cn/problem/P2024&#34;&gt;食物链&lt;/a&gt; 以及 &lt;a href=&#34;https://www.luogu.com.cn/paste/q0xvmw4b&#34;&gt;Code&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://loj.ac/p/2594&#34;&gt;「NOIP2010」关押罪犯&lt;/a&gt; 以及 &lt;a href=&#34;https://loj.ac/s/1037151&#34;&gt;Code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://loj.ac/p/2594&#34;&gt;「NOIP 2010」关押罪犯&lt;/a&gt; 以及 &lt;a href=&#34;https://loj.ac/s/1037151&#34;&gt;Code&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.luogu.com.cn/problem/CF1250E&#34;&gt;CF1250E The Coronation&lt;/a&gt; 以及 &lt;a href=&#34;https://codeforces.com/contest/1250/submission/104512819&#34;&gt;Code&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;最短路&#34;&gt;最短路&lt;/h3&gt;
 &lt;p&gt;最短路树（图）即当确定一点 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;u&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.43056em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;u&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 时，对于所有点 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;v&lt;/mi&gt;&lt;mpadded width=&#34;0px&#34;&gt;&lt;mo&gt;&lt;/mo&gt;&lt;/mpadded&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;v\not = u&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.8888799999999999em;vertical-align:-0.19444em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.03588em;&#34;&gt;v&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.69444em;&#34;&gt;&lt;span style=&#34;top:-3em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;rlap&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.8888799999999999em;vertical-align:-0.19444em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;inner&#34;&gt;&lt;span class=&#34;mrel&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;fix&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.19444em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.36687em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.43056em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;u&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 只保留 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mo separator=&#34;true&#34;&gt;,&lt;/mo&gt;&lt;mi&gt;v&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;(u,v)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;mpunct&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.03588em;&#34;&gt;v&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 最短路上的边形成的树。&lt;/p&gt;
 &lt;h4 id=&#34;例题-3&#34;&gt;例题&lt;/h4&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.luogu.com.cn/problem/P4568&#34;&gt;「JLOI2011」飞行路线&lt;/a&gt; 以及 &lt;a href=&#34;https://www.luogu.com.cn/paste/h8hl6sue&#34;&gt;Code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.luogu.com.cn/problem/P4568&#34;&gt;「JLOI 2011」飞行路线&lt;/a&gt; 以及 &lt;a href=&#34;https://www.luogu.com.cn/paste/h8hl6sue&#34;&gt;Code&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://loj.ac/p/6009&#34;&gt;「网络流 24 题」软件补丁&lt;/a&gt; 以及 &lt;a href=&#34;https://loj.ac/s/1043704&#34;&gt;Code&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.luogu.com.cn/problem/P1948&#34;&gt;「USACO 2008 Jan. Silver」Telephone Lines&lt;/a&gt; 以及 &lt;a href=&#34;https://www.luogu.com.cn/paste/i15l0qb1&#34;&gt;Code&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://loj.ac/p/10081&#34;&gt;「USACO 2011 Jan. Gold」道路与航线&lt;/a&gt; 以及 &lt;a href=&#34;https://loj.ac/s/1043944&#34;&gt;Code&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://loj.ac/p/2590&#34;&gt;「NOIP2009」最优贸易&lt;/a&gt; 以及 &lt;a href=&#34;https://loj.ac/s/1043859&#34;&gt;Code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://loj.ac/p/2590&#34;&gt;「NOIP 2009」最优贸易&lt;/a&gt; 以及 &lt;a href=&#34;https://loj.ac/s/1043859&#34;&gt;Code&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;矩阵快速幂&#34;&gt;矩阵快速幂&lt;/h3&gt;
 &lt;h4 id=&#34;瞎扯-2&#34;&gt;瞎扯&lt;/h4&gt;
@@ -1290,7 +1290,7 @@ H(x) = G(x) \cdot F(x) = (1+x)^{n+m} = \sum\limits_{k\ge 0} \binom{n+m}{k} x^k
 &lt;li&gt;&lt;a href=&#34;https://www.luogu.com.cn/problem/P2579&#34;&gt;「ZJOI2005」沼泽鳄鱼&lt;/a&gt; 以及 &lt;a href=&#34;https://darkbzoj.tk/submission/106375&#34;&gt;Code&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.luogu.com.cn/problem/P5789&#34;&gt;「TJOI2017」可乐（数据加强版）&lt;/a&gt; 以及 &lt;a href=&#34;https://darkbzoj.tk/submission/106380&#34;&gt;Code&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.luogu.com.cn/problem/P2886&#34;&gt;「USACO 2007 Nov. Gold」Cow Relays&lt;/a&gt; 以及 &lt;a href=&#34;https://www.luogu.com.cn/paste/j2t09793&#34;&gt;Code&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://loj.ac/p/3339&#34;&gt;「NOI2020」美食家&lt;/a&gt; 以及 &lt;a href=&#34;https://loj.ac/s/1044979&#34;&gt;Code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://loj.ac/p/3339&#34;&gt;「NOI 2020」美食家&lt;/a&gt; 以及 &lt;a href=&#34;https://loj.ac/s/1044979&#34;&gt;Code&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;字符串-哈希&#34;&gt;字符串 / 哈希&lt;/h3&gt;
 &lt;h4 id=&#34;例题-5&#34;&gt;例题&lt;/h4&gt;
@@ -1300,13 +1300,21 @@ H(x) = G(x) \cdot F(x) = (1+x)^{n+m} = \sum\limits_{k\ge 0} \binom{n+m}{k} x^k
 &lt;li&gt;&lt;a href=&#34;https://www.luogu.com.cn/problem/P3435&#34;&gt;「POI 2006」OKR-Periods of Words&lt;/a&gt; 懒得放代码&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://loj.ac/p/2246&#34;&gt;「NOI2014」动物园&lt;/a&gt; 以及 &lt;a href=&#34;https://loj.ac/s/1063974&#34;&gt;Code&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://codeforces.com/problemset/problem/1200/E&#34;&gt;CF1200E Compress Words&lt;/a&gt; 以及 &lt;a href=&#34;https://codeforces.com/problemset/submission/1200/107158701&#34;&gt;Code&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.luogu.com.cn/problem/P5043&#34;&gt;「BJOI2015」树的同构&lt;/a&gt; 懒得放代码&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://loj.ac/p/2072&#34;&gt;「JSOI2016」独特的树叶&lt;/a&gt; 以及 &lt;a href=&#34;https://loj.ac/s/1064137&#34;&gt;Code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.luogu.com.cn/problem/P5043&#34;&gt;「BJOI 2015」树的同构&lt;/a&gt; 懒得放代码&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://loj.ac/p/2072&#34;&gt;「JSOI 2016」独特的树叶&lt;/a&gt; 以及 &lt;a href=&#34;https://loj.ac/s/1064137&#34;&gt;Code&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;数学-数论&#34;&gt;数学 / 数论&lt;/h3&gt;
 &lt;h4 id=&#34;瞎扯-3&#34;&gt;瞎扯&lt;/h4&gt;
+&lt;p&gt;高斯消元在异或意义下同样成立&lt;/p&gt;
+&lt;p&gt;之前写的学习笔记：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
 &lt;p&gt;&lt;a href=&#34;https://lycltb.github.io/post/20s-zroi-math/&#34;&gt;大概是总结一下这几天正睿的数论&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
 &lt;p&gt;&lt;a href=&#34;https://lycltb.github.io/post/20s-zroi-comb/&#34;&gt;大概是总结一下这几天正睿的组合数学&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;因为时间实在是不够了，例题&lt;strong&gt;不涉及&lt;/strong&gt;组合数学部分&lt;/p&gt;
 &lt;p&gt;也实在懒得放代码了（&lt;/p&gt;
 &lt;p&gt;〇你〇，文化课能不能去死啊（&lt;/p&gt;
@@ -1321,7 +1329,15 @@ H(x) = G(x) \cdot F(x) = (1+x)^{n+m} = \sum\limits_{k\ge 0} \binom{n+m}{k} x^k
 &lt;li&gt;&lt;a href=&#34;https://www.luogu.com.cn/problem/P1495&#34;&gt;【模板】中国剩余定理(CRT)/曹冲养猪&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.luogu.com.cn/problem/P3868&#34;&gt;「TJOI 2009」猜数字&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.luogu.com.cn/problem/P2480&#34;&gt;「SDOI 2010」古代猪文&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.luogu.com.cn/problem/P4777&#34;&gt;【模板】扩展中国剩余定理（EXCRT）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://loj.ac/p/2721&#34;&gt;「NOI 2018」屠龙勇士&lt;/a&gt; 以及 &lt;a href=&#34;https://loj.ac/s/1064713&#34;&gt;Code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.luogu.com.cn/problem/P3389&#34;&gt;【模板】高斯消元法&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.luogu.com.cn/problem/P4035&#34;&gt;「JSOI 2008」球形空间产生器&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.luogu.com.cn/problem/P2447&#34;&gt;「SDOI 2010」外星千足虫&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
+&lt;h3 id=&#34;尾声&#34;&gt;尾声&lt;/h3&gt;
+&lt;p&gt;我们的故事暂且告一段落了。&lt;/p&gt;
+&lt;p&gt;OI，七月再见。&lt;/p&gt;
 ">【学习笔记】基础的各种东西</a>
       </div>
       
