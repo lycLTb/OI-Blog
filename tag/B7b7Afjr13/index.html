@@ -9,7 +9,7 @@
 <meta name="description" content="退役鸽子博主
 &lt;meta name=&#34;referrer&#34; content=&#34;no-referrer&#34;/&gt;">
 <meta name="theme-color" content="#ced4da">
-<title>【学习笔记】基础的各种东西 | LTb的博客</title>
+<title>LTb的博客</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1616335945459">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
@@ -39,8 +39,6 @@
 
 
 
-  <meta name="description" content="【学习笔记】基础的各种东西" />
-  <meta name="keywords" content="アルセチ力,学习笔记" />
 </head>
 
 <body>
@@ -173,26 +171,10 @@
   <div class="main-continer">
     
     <div
-      class="section-layout gemini ">
+      class="section-layout  gemini">
       <div class="section-layout-wrapper">
-        
-
-<div class="sidebar">
-  
-    <div class="sidebar-box box-shadow-wrapper bg-color right-motion" id="sidebar">
-      
-        <div class="post-list-sidebar">
-          <div class="sidebar-title">
-            <span id="tocSideBar" class="sidebar-title-item sidebar-title-active language" data-lan="index">文章目录</span>
-            <span id="metaSideBar" class="sidebar-title-item language" data-lan="preview">站点概览</span>
-          </div>
-        </div>
-      
-      <div class="sidebar-body gemini" id="sidebar_body">
-        
-          
-            <div class="post-side-meta" id="post_side_meta">
-              
+        <div id="sidebarMeta" class="sidebar">
+    
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="/images/avatar.png"/>
@@ -262,582 +244,244 @@
 
 
 </div>
-            </div>
-            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
-              <div class="toc-box right-motion">
-  <div class="toc-wrapper auto-number auto"
-    id="toc_wrapper">
-    <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#%E6%AC%A7%E6%8B%89%E8%B7%AF%E5%BE%84-%E5%9B%9E%E8%B7%AF">欧拉路径 / 回路</a>
-<ul>
-<li><a href="#%E7%9E%8E%E6%89%AF">瞎扯</a></li>
-<li><a href="#%E6%8A%80%E5%B7%A7">技巧</a></li>
-<li><a href="#%E4%BE%8B%E9%A2%98">例题</a></li>
-</ul>
-</li>
-<li><a href="#%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F">拓扑排序</a></li>
-<li><a href="#%E5%B9%B6%E6%9F%A5%E9%9B%86">并查集</a>
-<ul>
-<li><a href="#%E4%BE%8B%E9%A2%98-2">例题</a></li>
-</ul>
-</li>
-<li><a href="#%E6%9C%80%E7%9F%AD%E8%B7%AF">最短路</a>
-<ul>
-<li><a href="#%E4%BE%8B%E9%A2%98-3">例题</a></li>
-</ul>
-</li>
-<li><a href="#%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82">矩阵快速幂</a>
-<ul>
-<li><a href="#%E7%9E%8E%E6%89%AF-2">瞎扯</a></li>
-<li><a href="#tips">Tips</a></li>
-<li><a href="#%E4%BE%8B%E9%A2%98-4">例题</a></li>
-</ul>
-</li>
-<li><a href="#%E5%AD%97%E7%AC%A6%E4%B8%B2-%E5%93%88%E5%B8%8C">字符串 / 哈希</a>
-<ul>
-<li><a href="#%E4%BE%8B%E9%A2%98-5">例题</a></li>
-</ul>
-</li>
-<li><a href="#%E6%95%B0%E5%AD%A6-%E6%95%B0%E8%AE%BA">数学 / 数论</a>
-<ul>
-<li><a href="#%E7%9E%8E%E6%89%AF-3">瞎扯</a></li>
-<li><a href="#%E4%BE%8B%E9%A2%98-6">例题</a></li>
-</ul>
-</li>
-<li><a href="#%E5%88%86%E5%9D%97%E5%85%A5%E9%97%A8">分块入门</a>
-<ul>
-<li><a href="#%E4%BE%8B%E9%A2%98-7">例题</a></li>
-</ul>
-</li>
-<li><a href="#%E5%B0%BE%E5%A3%B0">尾声</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-  </div>
 </div>
-
 <script>
-
-  let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1;
-  let active = 'active-show', activeClass = 'active-current';
-  let tocWrapper = document.querySelector('#toc_wrapper');
-  let tocContent = tocWrapper.children[0];
-  let autoNumber = tocWrapper && tocWrapper.classList.contains('auto-number');
-
-  function addTocNumber(elem, deep) {
-    if (!elem) {
-      return;
-    }
-    let prop = elem.__proto__;
-
-    if (prop === HTMLUListElement.prototype) {
-      for (let i = 0; i < elem.children.length; i++) {
-        addTocNumber(elem.children[i], deep + (i + 1) + '.');
+  let sidebarMeta = document.querySelector('#sidebarMeta');
+  let scheme = 'gemini';
+  let sidebarWrapper = document.querySelector('.sidebar-wrapper');
+  if (sidebarMeta && (scheme === 'pisces' || scheme === 'gemini')) {
+    document.addEventListener('scroll', function(e) {
+      if (document.scrollingElement.scrollTop > parseInt(sidebarMeta.style.marginTop) + 10) {
+        sidebarWrapper.classList.add('home-sidebar-fixed')
+      } else {
+        sidebarWrapper.classList.remove('home-sidebar-fixed')
       }
-    } else if (prop === HTMLLIElement.prototype) {
-      // 保存li元素
-      if (elem.children[0] && elem.children[0].__proto__ === HTMLAnchorElement.prototype) {
-        lList.push(elem);
-      }
-      for (let i = 0; i < elem.children.length; i++) {
-        let cur = elem.children[i];
-        if (cur.__proto__ === HTMLAnchorElement.prototype) {
-          if (autoNumber) {
-            cur.text = deep + ' ' + cur.text;
-          }
-        } else if (cur.__proto__ === HTMLUListElement.prototype) {
-          addTocNumber(cur, deep);
-        }
-      }
-    }
-  }
-
-  function removeParentActiveClass() {
-    let parents = tocContent.querySelectorAll('.' + active)
-    parents.forEach(function (elem) {
-      elem.classList.remove(active);
     });
   }
-
-  function addActiveClass(index) {
-    if (index >= 0 && index < hList.length) {
-      lList[index].classList.add(activeClass);
-    }
-  }
-
-  function removeActiveClass(index) {
-    if (index >= 0 && index < hList.length) {
-      lList[index].classList.remove(activeClass);
-    }
-  }
-
-  function addActiveLiElemment(elem, parent) {
-    if (!elem || elem === parent) {
-      return;
-    } else {
-      if (elem.__proto__ === HTMLLIElement.prototype) {
-        elem.classList.add(active);
-      }
-      addActiveLiElemment(elem.parentElement, parent);
-    }
-  }
-
-  function showToc() {
-    if (tocWrapper) {
-      postBody = document.querySelector('#post_body');
-      for (let i = 0; i < postBody.children.length; i++) {
-        if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
-          hList.push(postBody.children[i]);
-        }
-      }
-      if (tocWrapper.classList.contains('compress')) {
-        tocContent.classList.add('closed');
-      } else if (tocWrapper.classList.contains('no_compress')) {
-        tocContent.classList.add('expanded');
-      } else {
-        if (hList.length > 10) {
-          active = 'active-hidden'
-          tocContent.classList.add('closed');
-        } else {
-          tocContent.classList.add('expanded');
-        }
-      }
-    }
-  }
-
-  (function () {
-    // 处理不是从#一级标题开始目录
-    if (tocContent.children.length === 1 && tocContent.children[0].__proto__ === HTMLLIElement.prototype) {
-      let con = tocContent.children[0].children[0];
-      tocContent.innerHTML = con.innerHTML;
-    }
-    let markdownItTOC = document.querySelector('.markdownIt-TOC');
-    let innerHeight = window.innerHeight;
-    markdownItTOC.style = `max-height: ${innerHeight - 80 > 0 ? innerHeight - 80 : innerHeight}px`
-    addTocNumber(tocContent, '');
-  })();
-
-  document.addEventListener('scroll', function (e) {
-    if (lList.length <= 0) {
-      return;
-    }
-    let scrollTop = document.scrollingElement.scrollTop + 10;
-    let dir;
-
-    if (lastTop - scrollTop > 0) {
-      dir = 'up';
-    } else {
-      dir = 'down';
-    }
-
-    lastTop = scrollTop;
-    if (scrollTop <= 0) {
-      if (lastIndex >= 0 && lastIndex < hList.length) {
-        lList[lastIndex].classList.remove(activeClass);
-      }
-      return;
-    }
-
-    let current = 0, hasFind = false;
-    for (let i = 0; i < hList.length; i++) {
-      if (hList[i].offsetTop > scrollTop) {
-        current = i;
-        hasFind = true;
-        break;
-      }
-    }
-    if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
-      current = hList.length - 1;
-    } else {
-      current--;
-    }
-    if (dir === 'down') {
-      if (current > lastIndex) {
-        addActiveClass(current);
-        removeActiveClass(lastIndex)
-        lastIndex = current;
-        removeParentActiveClass();
-        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
-      }
-    } else {
-      if (current < lastIndex) {
-        addActiveClass(current);
-        removeActiveClass(lastIndex);
-        lastIndex = current;
-        removeParentActiveClass();
-        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
-      }
-    }
-  });
-
-
-  window.addEventListener('load', function () {
-    showToc();
-    document.querySelector('#sidebar').style = 'display: block;';
-    tocWrapper.classList.add('toc-active');
-    setTimeout(function () {
-      if ("createEvent" in document) {
-        let evt = document.createEvent("HTMLEvents");
-        evt.initEvent("scroll", false, true);
-        document.dispatchEvent(evt);
-      }
-      else {
-        document.fireEvent("scroll");
-      }
-    }, 500)
-  })
-
-</script>
-            </div>
-          
-        
+  </script>
+        <div class="section-box tag-line box-shadow-wrapper">
+          <section class="section tags-section posts-expand bg-color">
+            <div class="padding-wrapper">
+  <div class="tag-timeline-box">
+    <div class="tag-timeline-wrapper">
+      <div class="tag-timeline-title">
+        <h2>
+          六校联考
+          <small class="language" data-lan="tag">标签</small>
+        </h2>
       </div>
-    </div>
-  
-</div>
-<script>
-  const SIDEBAR_TITLE_ACTIVE = 'sidebar-title-active';
-  const SIDEBAR_BODY_ACTIVE = 'sidebar-body-active';
-  const SLIDE_UP_IN = 'slide-up-in';
-
-  let sidebar = document.querySelector('#sidebar'),
-  tocSideBar = document.querySelector('#tocSideBar'),
-  metaSideBar = document.querySelector('#metaSideBar'),
-  postToc = document.querySelector('#post_toc'),
-  postSiteMeta = document.querySelector('#post_side_meta'),
-  sidebarTitle = document.querySelector('.sidebar-title'),
-  sidebarBody = document.querySelector('#sidebar_body');
-
-  tocSideBar && tocSideBar.addEventListener('click', (e) => {
-    toggleSidebar(e);
-  });
-
-  metaSideBar && metaSideBar.addEventListener('click', (e) => {
-    toggleSidebar(e);
-  });
-
-  function toggleSidebar(e) {
-    let currentTitle = document.querySelector("."+SIDEBAR_TITLE_ACTIVE);
-    if (currentTitle == e.srcElement) {
-      return ;
-    }
-    let current, showElement, hideElement;
-    if (e.srcElement == metaSideBar) {
-      showElement = postSiteMeta;
-      hideElement = postToc;
-    } else if (e.srcElement == tocSideBar){
-      showElement = postToc;
-      hideElement = postSiteMeta;
-    }
-    currentTitle.classList.remove(SIDEBAR_TITLE_ACTIVE);
-    e.srcElement.classList.add(SIDEBAR_TITLE_ACTIVE);
-
-    window.Velocity(hideElement, 'stop');
-    window.Velocity(hideElement, 'transition.slideUpOut', {
-      display: 'none',
-      duration: 200,
-      complete: function () {
-        window.Velocity(showElement, 'transition.slideDownIn', {
-          duration: 200
-        });
-      }
-    })
-    hideElement.classList.remove(SIDEBAR_BODY_ACTIVE);
-    showElement.classList.add(SIDEBAR_BODY_ACTIVE);
-  }
-
-  postToc && postToc.addEventListener('transitionend', function() {
-    this.classList.remove(SLIDE_UP_IN);
-  });
-
-  if (sidebarBody) {
-    if (sidebarBody.classList.contains('pisces') || sidebarBody.classList.contains('gemini')) {
-      let hasFix = false;
-      let scrollEl = document.querySelector('.main-continer');
-      let limitTop = document.querySelector('#nav_ul').children.length * 42 + 162;
-      window.addEventListener('scroll', function(e) {
-        if (document.scrollingElement.scrollTop >= limitTop) {
-          if (!hasFix) {
-            sidebar.classList.add('sidebar-fixed');
-            hasFix = true;
-          }
-        } else {
-          if (hasFix) {
-            sidebar.classList.remove('sidebar-fixed');
-            hasFix = false;
-          }
-        }
-      });
-    }
-  }
-  
-</script>
-        <div class="section-box box-shadow-wrapper">
-          <div class="section bg-color post post-page">
-            <section class="post-header">
-  <h1 class="post-title">
-    <a class="post-title-link" href="https://lycLTb.github.io/post/note-basic-algos/">
-      【学习笔记】基础的各种东西
-    </a>
-  </h1>
-  <div class="post-meta">
-    
-    <span class="meta-item">
-      <i class="fa fa-thumb-tack"></i>
-      <span class="language" data-lan="top">置顶</span>
-      <span class="post-meta-divider">|</span>
-    </span>
-    
-    <span class="meta-item pc-show">
-      <i class="fa fa-calendar-o"></i>
-      <span class="language" data-lan="publish">发布于</span>
-      <span class="publish-time" data-t="2021-01-09 23:35:18">2021-01-09</span>
-      <span class="post-meta-divider pc-show">|</span>
-    </span>
-    
-    <span class="meta-item">
-      <i class="fa fa-folder-o"></i>
-      <span class="pc-show language" data-lan="category-in">分类于</span>
-      
-      
-      <a href="https://lycLTb.github.io/tag/ej84zfSv8/">
-        <span>アルセチ力</span>
-      </a>、
       
       
       
-      <a href="https://lycLTb.github.io/tag/DUdLOUsMM/">
-        <span>学习笔记</span>
+      
+      
+      <a href="https://lycLTb.github.io/post/problem-solving-noip-6s-2020/">
+        <div class="motion-warpper">
+          <div class="tag-post-node">
+            <h1>
+              03-21
+              <small>「套题泛做」NOIP 六校联考 2020</small>
+            </h1>
+          </div>
+        </div>
       </a>
       
       
-    </span>
-    <span class="post-meta-divider">|</span>
-    
-    <span class="meta-item">
-      <i class="fa fa-clock-o"></i>
-      <span>5<span class="language" data-lan="minute">分钟</span></span>
-    </span>
-    <span class="meta-item">
-      <span class="post-meta-divider">|</span>
-      <i class="fa fa-file-word-o"></i>
-      <span>1134<span class="pc-show language" data-lan="words">字数</span></span>
-    </span>
-    
-  </div>
-</section>
-            <div class="post-body next-md-body" id="post_body">
-              <p>= =</p>
-<p>发现自己啥都不会（</p>
-<p>去补了补正睿暑假的内容（</p>
-<p>能找到题的话会尽量把题交到代码公开的 OJ 上，找不到就把代码挂洛谷剪贴板。</p>
-<h3 id="欧拉路径-回路">欧拉路径 / 回路</h3>
-<h4 id="瞎扯">瞎扯</h4>
-<p>欧拉路径指经过每一条边恰好一次的路径，欧拉回路指经过每一条边恰好一次的<strong>回路</strong>。</p>
-<p>欧拉回路可以使用简单的 dfs 求出，但是在遍历边 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>u</mi><mo separator="true">,</mo><mi>v</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(u,v)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">u</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="mclose">)</span></span></span></span> 时需要先把 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>v</mi></mrow><annotation encoding="application/x-tex">v</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span></span></span></span> 遍历完再加边 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>v</mi><mo separator="true">,</mo><mi>u</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(v,u)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">u</span><span class="mclose">)</span></span></span></span>。</p>
-<h4 id="技巧">技巧</h4>
-<p>欧拉回路有两个最重要的性质：</p>
-<ol>
-<li>经过每条边恰好一次</li>
-<li>到达每个点的次数等于离开每个点的次数</li>
-</ol>
-<p>举例来说，例题 2 利用了性质 1，例题 3 利用了性质 2。</p>
-<h4 id="例题">例题</h4>
-<ol>
-<li><a href="https://loj.ac/p/10105">板子</a> 以及 <a href="https://loj.ac/s/1030774">Code</a></li>
-<li><a href="https://www.luogu.com.cn/problem/P1341">无序字母对</a></li>
-<li><a href="https://www.luogu.com.cn/problem/CF547D">CF547D Mike and Fish</a></li>
-</ol>
-<h3 id="拓扑排序">拓扑排序</h3>
-<p>是人都会</p>
-<h3 id="并查集">并查集</h3>
-<p>发现自己啥都不会 = =</p>
-<p>值得注意的是，<strong>路径压缩加上按秩合并</strong>的并查集复杂度才是反阿克曼函数级别的，只有其中一个的话是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>log</mi><mo>⁡</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(\log n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span> 的。</p>
-<h4 id="例题-2">例题</h4>
-<ol>
-<li><a href="https://www.luogu.com.cn/problem/P2024">食物链</a> 以及 <a href="https://www.luogu.com.cn/paste/q0xvmw4b">Code</a></li>
-<li><a href="https://loj.ac/p/2594">「NOIP 2010」关押罪犯</a> 以及 <a href="https://loj.ac/s/1037151">Code</a></li>
-<li><a href="https://www.luogu.com.cn/problem/CF1250E">CF1250E The Coronation</a> 以及 <a href="https://codeforces.com/contest/1250/submission/104512819">Code</a></li>
-</ol>
-<h3 id="最短路">最短路</h3>
-<p>最短路树（图）即当确定一点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>u</mi></mrow><annotation encoding="application/x-tex">u</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">u</span></span></span></span> 时，对于所有点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>v</mi><mpadded width="0px"><mo></mo></mpadded><mo>=</mo><mi>u</mi></mrow><annotation encoding="application/x-tex">v\not = u</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel"><span class="mord"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="rlap"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="inner"><span class="mrel"></span></span><span class="fix"></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span></span></span><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">u</span></span></span></span> 只保留 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>u</mi><mo separator="true">,</mo><mi>v</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(u,v)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">u</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="mclose">)</span></span></span></span> 最短路上的边形成的树。</p>
-<h4 id="例题-3">例题</h4>
-<ol>
-<li><a href="https://www.luogu.com.cn/problem/P4568">「JLOI 2011」飞行路线</a> 以及 <a href="https://www.luogu.com.cn/paste/h8hl6sue">Code</a></li>
-<li><a href="https://loj.ac/p/6009">「网络流 24 题」软件补丁</a> 以及 <a href="https://loj.ac/s/1043704">Code</a></li>
-<li><a href="https://www.luogu.com.cn/problem/P1948">「USACO 2008 Jan. Silver」Telephone Lines</a> 以及 <a href="https://www.luogu.com.cn/paste/i15l0qb1">Code</a></li>
-<li><a href="https://loj.ac/p/10081">「USACO 2011 Jan. Gold」道路与航线</a> 以及 <a href="https://loj.ac/s/1043944">Code</a></li>
-<li><a href="https://loj.ac/p/2590">「NOIP 2009」最优贸易</a> 以及 <a href="https://loj.ac/s/1043859">Code</a></li>
-</ol>
-<h3 id="矩阵快速幂">矩阵快速幂</h3>
-<h4 id="瞎扯-2">瞎扯</h4>
-<p>邻接矩阵快速幂和普通的没啥区别，只是转移矩阵经常长得像邻接矩阵（</p>
-<p>附赠 <a href="https://loj.ac/s/1044648">封装板子</a></p>
-<h4 id="tips">Tips</h4>
-<ol>
-<li>
-<p>注意广义矩阵乘法的单位矩阵也是会变的，如果单位矩阵不好推的话就换个写法</p>
-</li>
-<li>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi><mo separator="true">,</mo><mi>j</mi><mo separator="true">,</mo><mi>k</mi><mo>→</mo><mi>i</mi><mo separator="true">,</mo><mi>k</mi><mo separator="true">,</mo><mi>j</mi></mrow><annotation encoding="application/x-tex">i,j,k \to i,k,j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">i</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">i</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span></span></span></span></p>
-</li>
-<li>
-<p>初始矩阵的行数为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>，所以它与一个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>×</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">n \times n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 的转移矩阵做乘法是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mi>n</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span> 而不是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mi>n</mi><mn>3</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n^3)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span> 的，可以利用这一点来优化</p>
-</li>
-<li>
-<p>如果一种广义矩阵乘法要满足结合律，它的两种运算（代替原来的加法和乘法的二元运算）需要构成一个半环，即：</p>
-<ul>
-<li>加法满足封闭性、交换律、结合律，存在单位元，但是不需要逆元</li>
-<li>乘法满足封闭性、结合律</li>
-<li>乘法关于加法满足分配律，即 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo>(</mo><mi>b</mi><mo>+</mo><mi>c</mi><mo>)</mo><mo>=</mo><mi>a</mi><mi>b</mi><mo>+</mo><mi>a</mi><mi>c</mi></mrow><annotation encoding="application/x-tex">a(b+c)=ab+ac</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">a</span><span class="mopen">(</span><span class="mord mathdefault">b</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">c</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.77777em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">a</span><span class="mord mathdefault">b</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span><span class="mord mathdefault">c</span></span></span></span> 且 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>a</mi><mo>+</mo><mi>b</mi><mo>)</mo><mi>c</mi><mo>=</mo><mi>a</mi><mi>c</mi><mo>+</mo><mi>b</mi><mi>c</mi></mrow><annotation encoding="application/x-tex">(a+b)c = ac+bc</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">b</span><span class="mclose">)</span><span class="mord mathdefault">c</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">a</span><span class="mord mathdefault">c</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span><span class="mord mathdefault">c</span></span></span></span></li>
-<li>via. <a href="https://www.luogu.com.cn/user/275500">tiger0132</a></li>
-</ul>
-</li>
-</ol>
-<h4 id="例题-4">例题</h4>
-<ol>
-<li><a href="https://www.luogu.com.cn/problem/P1962">斐波那契数列</a></li>
-<li><a href="https://www.luogu.com.cn/problem/P2044">「NOI2012」 随机数生成器</a> 以及 <a href="https://loj.ac/s/1044200">Code</a></li>
-<li><a href="https://www.luogu.com.cn/problem/P3216">「HNOI2011」数学作业</a> 以及 <a href="https://darkbzoj.tk/submission/106208">Code</a></li>
-<li><a href="https://www.luogu.com.cn/problem/P4838">P哥破解密码</a> 以及 <a href="https://www.luogu.com.cn/paste/jrcjrg12">Code</a></li>
-<li><a href="https://www.luogu.com.cn/problem/P5678">「GZOI2017」河神</a> 以及 <a href="https://www.luogu.com.cn/paste/2halikwb">Code</a></li>
-<li><a href="https://www.luogu.com.cn/problem/P4159">「SCOI2009」迷路</a> 以及 <a href="https://loj.ac/s/1044494">Code</a>，洛谷过了但是 loj 莫名 RE</li>
-<li><a href="https://www.luogu.com.cn/problem/P2151">「SDOI2009」HH 去散步</a> 以及 <a href="https://darkbzoj.tk/submission/106344">Code</a></li>
-<li><a href="https://www.luogu.com.cn/problem/P2579">「ZJOI2005」沼泽鳄鱼</a> 以及 <a href="https://darkbzoj.tk/submission/106375">Code</a></li>
-<li><a href="https://www.luogu.com.cn/problem/P5789">「TJOI2017」可乐（数据加强版）</a> 以及 <a href="https://darkbzoj.tk/submission/106380">Code</a></li>
-<li><a href="https://www.luogu.com.cn/problem/P2886">「USACO 2007 Nov. Gold」Cow Relays</a> 以及 <a href="https://www.luogu.com.cn/paste/j2t09793">Code</a></li>
-<li><a href="https://loj.ac/p/3339">「NOI 2020」美食家</a> 以及 <a href="https://loj.ac/s/1044979">Code</a></li>
-</ol>
-<h3 id="字符串-哈希">字符串 / 哈希</h3>
-<h4 id="例题-5">例题</h4>
-<ol>
-<li><a href="https://www.luogu.com.cn/problem/P3375">【模板】KMP字符串匹配</a></li>
-<li><a href="https://www.luogu.com.cn/problem/P4824">「USACO 2015 Feb. Silver」Censoring</a> 懒得放代码</li>
-<li><a href="https://www.luogu.com.cn/problem/P3435">「POI 2006」OKR-Periods of Words</a> 懒得放代码</li>
-<li><a href="https://loj.ac/p/2246">「NOI2014」动物园</a> 以及 <a href="https://loj.ac/s/1063974">Code</a></li>
-<li><a href="https://codeforces.com/problemset/problem/1200/E">CF1200E Compress Words</a> 以及 <a href="https://codeforces.com/problemset/submission/1200/107158701">Code</a></li>
-<li><a href="https://www.luogu.com.cn/problem/P5043">「BJOI 2015」树的同构</a> 懒得放代码</li>
-<li><a href="https://loj.ac/p/2072">「JSOI 2016」独特的树叶</a> 以及 <a href="https://loj.ac/s/1064137">Code</a></li>
-</ol>
-<h3 id="数学-数论">数学 / 数论</h3>
-<h4 id="瞎扯-3">瞎扯</h4>
-<p>高斯消元在异或意义下同样成立</p>
-<p>之前写的学习笔记：</p>
-<ul>
-<li>
-<p><a href="https://lycltb.github.io/post/20s-zroi-math/">大概是总结一下这几天正睿的数论</a></p>
-</li>
-<li>
-<p><a href="https://lycltb.github.io/post/20s-zroi-comb/">大概是总结一下这几天正睿的组合数学</a></p>
-</li>
-</ul>
-<p>因为时间实在是不够了，例题<strong>不涉及</strong>组合数学部分</p>
-<p>也实在懒得放代码了（</p>
-<p>〇你〇，文化课能不能去死啊（</p>
-<h4 id="例题-6">例题</h4>
-<ol>
-<li><a href="https://www.luogu.com.cn/problem/P3383">【模板】线性筛素数</a></li>
-<li><a href="https://www.luogu.com.cn/problem/P2158">「SDOI 2008」仪仗队</a></li>
-<li><a href="https://www.luogu.com.cn/problem/P2398">GCD SUM</a></li>
-<li><a href="https://www.luogu.com.cn/problem/P5656">【模板】二元一次不定方程 (exgcd)</a></li>
-<li><a href="https://www.luogu.com.cn/problem/P3811">【模板】乘法逆元</a></li>
-<li><a href="https://www.luogu.com.cn/problem/P1082">「NOIP 2012」同余方程</a></li>
-<li><a href="https://www.luogu.com.cn/problem/P1495">【模板】中国剩余定理(CRT)/曹冲养猪</a></li>
-<li><a href="https://www.luogu.com.cn/problem/P3868">「TJOI 2009」猜数字</a></li>
-<li><a href="https://www.luogu.com.cn/problem/P2480">「SDOI 2010」古代猪文</a></li>
-<li><a href="https://www.luogu.com.cn/problem/P4777">【模板】扩展中国剩余定理（EXCRT）</a></li>
-<li><a href="https://loj.ac/p/2721">「NOI 2018」屠龙勇士</a> 以及 <a href="https://loj.ac/s/1064713">Code</a></li>
-<li><a href="https://www.luogu.com.cn/problem/P3389">【模板】高斯消元法</a></li>
-<li><a href="https://www.luogu.com.cn/problem/P4035">「JSOI 2008」球形空间产生器</a></li>
-<li><a href="https://www.luogu.com.cn/problem/P2447">「SDOI 2010」外星千足虫</a></li>
-</ol>
-<h3 id="分块入门">分块入门</h3>
-<h4 id="例题-7">例题</h4>
-<ol>
-<li><a href="https://loj.ac/p/6277">#6277. 数列分块入门 1</a> 以及 <a href="https://loj.ac/s/1078182">Code</a></li>
-<li><a href="https://loj.ac/p/6278">#6278. 数列分块入门 2</a> 以及 <a href="https://loj.ac/s/1078220">Code</a></li>
-<li><a href="https://loj.ac/p/6279">#6279. 数列分块入门 3</a> 以及 <a href="https://loj.ac/s/1078240">Code</a></li>
-<li><a href="https://loj.ac/p/6280">#6280. 数列分块入门 4</a> 以及 <a href="https://loj.ac/s/1078268">Code</a></li>
-</ol>
-<h3 id="尾声">尾声</h3>
-<p>我们的故事暂且告一段落了。</p>
-<p>OI，七月再见。</p>
-
-            </div>
-            
-            
-              <div class="post-footer">
-  <ul class="post-copyright">
-    <li class="post-copyright-author">
-      <strong class="language" data-lan="author">本文作者：</strong>
-      LTb
-    </li>
-    <li class="post-copyright-link">
-      <strong class="language" data-lan="link">本文链接：</strong>
-      <a href="https://lycLTb.github.io/post/note-basic-algos/" title="【学习笔记】基础的各种东西">https://lycLTb.github.io/post/note-basic-algos/</a>
-    </li>
-    <li class="post-copyright-license">
-      <strong class="language" data-lan="copyright">版权声明： </strong>
-      本博客所有文章除特别声明外，均采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i> BY-NC-SA</a> 许可协议。转载请注明出处！
-    </li>
-  </ul>
-  <div class="tags">
-    
-      <a href="https://lycLTb.github.io/tag/ej84zfSv8/"># アルセチ力</a>
-    
-      <a href="https://lycLTb.github.io/tag/DUdLOUsMM/"># 学习笔记</a>
-    
-  </div>
-  <div class="nav">
-    <div class="nav-prev">
       
-        <i class="fa fa-chevron-left"></i>
-        <a class="nav-pc-next" title="【学习笔记】生成函数入门" href="https://lycLTb.github.io/post/generating-function-noob/">【学习笔记】生成函数入门</a class="nav-pc-next">
-        <a class="nav-mobile-prev" title="【学习笔记】生成函数入门" href="https://lycLTb.github.io/post/generating-function-noob/">上一篇</a>
       
-    </div>
-    <div class="nav-next">
       
-        <a class="nav-pc-next" title="【题解】CF1461F" href="https://lycLTb.github.io/post/solution-cf1461f/">【题解】CF1461F</a>
-        <a class="nav-mobile-next" title="【题解】CF1461F" href="https://lycLTb.github.io/post/solution-cf1461f/">下一篇</a>
-        <i class="fa fa-chevron-right"></i>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
       
     </div>
   </div>
 </div>
-            
-            
-  
-    
-      <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-
-<div id="gitalk-container"></div>
-
-<script>
-  var gitalk = new Gitalk({
-    clientID: '8fa51220cecd07bb28f9',
-    clientSecret: '766debe3e600ba108795bbc1d9959d808d007a8b',
-    repo: 'lycLTb.github.io',
-    owner: 'lycLTb',
-    admin: ['lycLTb'],
-    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
-    distractionFreeMode: false  // Facebook-like distraction free mode
-  })
-  gitalk.render('gitalk-container')
-</script>
-    
-    
-  
-
-          </div>
+          </section>
         </div>
       </div>
     </div>
@@ -1025,253 +669,6 @@
   }
 
 </script>
-    <div class="light-box" id="light_box"></div>
-<script>
-  let imgs = document.querySelectorAll('.post-body img');
-  let lightBox = document.querySelector('#light_box');
-  lightBox.addEventListener('mousedown', (e) => {
-    e.preventDefault()
-  })
-  lightBox.addEventListener('mousewheel', (e) => {
-    e.preventDefault()
-  })
-  let width = window.innerWidth * 0.8;
-  lightBox.onclick = () => {
-    let img = lightBox.querySelector('img');
-    lightBox.style = '';
-    img && img.remove();
-  }
-  imgs.forEach(item => {
-    item.onclick = function (e) {
-      let lightImg = document.createElement('img');
-      lightImg.src = this.src;
-      lightBox.style = `height: 100%; opacity: 1; background-color: rgba(0, 0, 0, 0.5);cursor: zoom-out;`;
-      lightImg.style = `width: ${width}px;border-radius: 2px;`;
-      lightImg.onclick = function () {
-        lightBox.style = '';
-        this.remove();
-      }
-      lightBox.append(lightImg);
-    }
-  })
-</script>
-    <div class="reward-mask" style="display: none;">
-  <div class="reward-relative">
-    <span class="close" aria-hidden="true">x</span>
-    <div class="reward-body">
-      <h2>感谢您的支持，我会继续努力的!</h2>
-      <div class="reward-img-box">
-        <div style="position: relative; width: 140px; height: 140px;">
-          
-          
-          
-        </div>
-      </div>
-      <p class="reward-word">扫码打赏，你说多少就多少</p>
-      <p class="reward-tip">打开微信扫一扫，即可进行扫码打赏哦</p>
-    </div>
-    <div class="bottom">
-      
-      
-    </div>
-  </div>
-</div>
-<style>
-  .reward-mask {
-    position: fixed;
-    z-index: 99999;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: #00000054;
-  }
-
-  .reward-relative {
-    position: relative;
-    width: 480px;
-    text-align: center;
-    margin: 0 auto;
-    border-radius: 5px;
-    background-color: #fff;
-    top: 50%;
-    margin-top: -205px;
-  }
-
-  .reward-relative .close {
-    position: absolute;
-    right: 10px;
-    font-weight: normal;
-    font-size: 16px;
-    color: #929292;
-  }
-
-  .reward-body {
-    padding: 40px 20px 20px;
-  }
-
-  .bottom {
-    display: flex;
-  }
-
-  .reward-btn {
-    text-align: center;
-  }
-
-  .reward-btn-text {
-    display: inline-block;
-    cursor: pointer;
-    width: 60px;
-    height: 60px;
-    line-height: 60px;
-    border-radius: 50%;
-    background-color: #ff9734;
-    color: #FFF;
-    margin-top: 20px;
-  }
-
-  .pay-text {
-    margin-top: 10px;
-    padding: 10px;
-    flex: 1;
-    transition: all .2s linear;
-  }
-
-  .pay-text:hover {
-    background-color: #a5a5a536;
-  }
-
-  .reward-body h2 {
-    padding-top: 10px;
-    text-align: center;
-    color: #a3a3a3;
-    font-size: 16px;
-    font-weight: normal;
-    margin: 0 0 20px;
-  }
-
-  .reward-body h2:after,
-  .reward-body h2:before {
-    font-family: Arial, Helvetica, sans-serif;
-    background: 0 0;
-    width: 0;
-    height: 0;
-    font-style: normal;
-    color: #eee;
-    font-size: 80px;
-    position: absolute;
-    top: 20px;
-  }
-
-  .reward-body h2:before {
-    content: '\201c';
-    left: 50px;
-  }
-
-  .reward-body h2:after {
-    content: '\201d';
-    right: 80px;
-  }
-
-  .reward-img-box {
-    display: inline-block;
-    padding: 10px;
-    border: 6px solid #ea5f00;
-    margin: 0 auto;
-    border-radius: 3px;
-    position: relative;
-  }
-
-  .reward-img {
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-  }
-
-  @media (max-width: 767px) {
-    .reward-relative {
-      height: 100%;
-      top: 0px;
-      margin-top: 0;
-      width: auto;
-    }
-
-    .reward-relative .bottom {
-      flex-direction: column;
-    }
-
-    .reward-relative .pay-text {
-      width: 80%;
-      margin: 5px auto;
-      border: 1px solid silver;
-      padding: 6px;
-      border-radius: 4px;
-    }
-
-    .reward-body h2:after {
-      right: 40px;
-    }
-
-    .reward-body h2:after,
-    .reward-body h2:before {
-      font-size: 60px;
-    }
-
-    .reward-body h2:before {
-      left: 20px;
-    }
-  }
-</style>
-<script>
-  !function () {
-    var mask = document.querySelector('.reward-mask');
-    let close = document.querySelector('.reward-relative .close');
-    let rewardBtn = document.querySelector('.reward-btn');
-
-    let zfb = document.querySelector('#zfb'),
-      wx = document.querySelector('#wx'),
-      zfbBtn = document.querySelector('#zfbBtn'),
-      wxBtn = document.querySelector('#wxBtn');
-
-    if (zfbBtn && wxBtn) {
-      zfbBtn.addEventListener('click', () => {
-        window.Velocity(zfb, 'transition.slideLeftIn', {
-          duration: 400
-        });
-        window.Velocity(wx, 'transition.slideRightOut', {
-          display: 'none',
-          duration: 400
-        });
-      });
-
-      wxBtn.addEventListener('click', () => {
-        window.Velocity(wx, 'transition.slideRightIn', {
-          duration: 400
-        });
-        window.Velocity(zfb, 'transition.slideLeftOut', {
-          display: 'none',
-          duration: 400
-        });
-      });
-    }
-
-    rewardBtn.addEventListener('click', (e) => {
-      window.Velocity(mask, 'transition.slideDownIn', {
-        duration: 400
-      })
-    });
-
-    close.addEventListener('click', (e) => {
-      e.preventDefault();
-      window.Velocity(mask, 'transition.slideUpOut', {
-        duration: 400
-      })
-    })
-  }()
-</script>
-
   </div>
 </body>
 
@@ -5555,6 +4952,7 @@ QAQ&lt;br&gt;
 
 
 <script src="/media/js/cool.js"></script>
+
 
 
 
