@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lycLTb.github.io/</id>
     <title>LTb的博客</title>
-    <updated>2021-07-14T09:59:35.063Z</updated>
+    <updated>2021-07-14T10:02:42.946Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lycLTb.github.io/"/>
     <link rel="self" href="https://lycLTb.github.io/atom.xml"/>
@@ -41,13 +41,6 @@
 <p>发现是个网络流，于是捡起了快一年没碰的网络流复习（</p>
 <p>注意到这个有先决条件的选数 以及数据范围都长得很像最大权闭合子图模型，于是用这个模型去做。</p>
 ]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[【学习笔记】生成函数入门]]></title>
-        <id>https://lycLTb.github.io/post/generating-function-noob</id>
-        <link href="https://lycLTb.github.io/post/generating-function-noob">
-        </link>
-        <updated>2021-01-15T15:26:20.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[【学习笔记】基础的各种东西]]></title>
@@ -146,5 +139,12 @@
         <link href="https://lycLTb.github.io/post/training-ez-dp">
         </link>
         <updated>2020-11-13T10:53:27.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[CSP / NOIP 2020 游记]]></title>
+        <id>https://lycLTb.github.io/post/csp-noip-2020</id>
+        <link href="https://lycLTb.github.io/post/csp-noip-2020">
+        </link>
+        <updated>2020-10-11T08:10:29.000Z</updated>
     </entry>
 </feed>
