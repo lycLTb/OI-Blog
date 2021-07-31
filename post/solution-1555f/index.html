@@ -9,7 +9,7 @@
 <meta name="description" content="退役鸽子博主
 &lt;meta name=&#34;referrer&#34; content=&#34;no-referrer&#34;/&gt;">
 <meta name="theme-color" content="#ced4da">
-<title>lyc的板子 | LTb的博客</title>
+<title>【题解】1555F | LTb的博客</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1627720918654">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
@@ -39,8 +39,8 @@
 
 
 
-  <meta name="description" content="lyc的板子" />
-  <meta name="keywords" content="关于lyc,はるまきごはん" />
+  <meta name="description" content="【题解】1555F" />
+  <meta name="keywords" content="题解" />
 </head>
 
 <body>
@@ -191,8 +191,7 @@
       <div class="sidebar-body gemini" id="sidebar_body">
         
           
-            <div class="post-side-meta" id="post_side_meta">
-              
+            
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="/images/avatar.png"/>
@@ -262,204 +261,6 @@
 
 
 </div>
-            </div>
-            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
-              <div class="toc-box right-motion">
-  <div class="toc-wrapper auto-number auto"
-    id="toc_wrapper">
-    <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#%E7%BA%BF%E6%AE%B5%E6%A0%91">线段树</a></li>
-<li><a href="#dinic">Dinic</a></li>
-<li><a href="#%E5%BF%AB%E9%80%9F%E5%B9%82">快速幂</a></li>
-<li><a href="#%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84">树状数组</a></li>
-<li><a href="#%E5%AF%B9%E6%8B%8D">对拍</a></li>
-<li><a href="#%E5%BF%AB%E8%AF%BB">快读</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-  </div>
-</div>
-
-<script>
-
-  let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1;
-  let active = 'active-show', activeClass = 'active-current';
-  let tocWrapper = document.querySelector('#toc_wrapper');
-  let tocContent = tocWrapper.children[0];
-  let autoNumber = tocWrapper && tocWrapper.classList.contains('auto-number');
-
-  function addTocNumber(elem, deep) {
-    if (!elem) {
-      return;
-    }
-    let prop = elem.__proto__;
-
-    if (prop === HTMLUListElement.prototype) {
-      for (let i = 0; i < elem.children.length; i++) {
-        addTocNumber(elem.children[i], deep + (i + 1) + '.');
-      }
-    } else if (prop === HTMLLIElement.prototype) {
-      // 保存li元素
-      if (elem.children[0] && elem.children[0].__proto__ === HTMLAnchorElement.prototype) {
-        lList.push(elem);
-      }
-      for (let i = 0; i < elem.children.length; i++) {
-        let cur = elem.children[i];
-        if (cur.__proto__ === HTMLAnchorElement.prototype) {
-          if (autoNumber) {
-            cur.text = deep + ' ' + cur.text;
-          }
-        } else if (cur.__proto__ === HTMLUListElement.prototype) {
-          addTocNumber(cur, deep);
-        }
-      }
-    }
-  }
-
-  function removeParentActiveClass() {
-    let parents = tocContent.querySelectorAll('.' + active)
-    parents.forEach(function (elem) {
-      elem.classList.remove(active);
-    });
-  }
-
-  function addActiveClass(index) {
-    if (index >= 0 && index < hList.length) {
-      lList[index].classList.add(activeClass);
-    }
-  }
-
-  function removeActiveClass(index) {
-    if (index >= 0 && index < hList.length) {
-      lList[index].classList.remove(activeClass);
-    }
-  }
-
-  function addActiveLiElemment(elem, parent) {
-    if (!elem || elem === parent) {
-      return;
-    } else {
-      if (elem.__proto__ === HTMLLIElement.prototype) {
-        elem.classList.add(active);
-      }
-      addActiveLiElemment(elem.parentElement, parent);
-    }
-  }
-
-  function showToc() {
-    if (tocWrapper) {
-      postBody = document.querySelector('#post_body');
-      for (let i = 0; i < postBody.children.length; i++) {
-        if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
-          hList.push(postBody.children[i]);
-        }
-      }
-      if (tocWrapper.classList.contains('compress')) {
-        tocContent.classList.add('closed');
-      } else if (tocWrapper.classList.contains('no_compress')) {
-        tocContent.classList.add('expanded');
-      } else {
-        if (hList.length > 10) {
-          active = 'active-hidden'
-          tocContent.classList.add('closed');
-        } else {
-          tocContent.classList.add('expanded');
-        }
-      }
-    }
-  }
-
-  (function () {
-    // 处理不是从#一级标题开始目录
-    if (tocContent.children.length === 1 && tocContent.children[0].__proto__ === HTMLLIElement.prototype) {
-      let con = tocContent.children[0].children[0];
-      tocContent.innerHTML = con.innerHTML;
-    }
-    let markdownItTOC = document.querySelector('.markdownIt-TOC');
-    let innerHeight = window.innerHeight;
-    markdownItTOC.style = `max-height: ${innerHeight - 80 > 0 ? innerHeight - 80 : innerHeight}px`
-    addTocNumber(tocContent, '');
-  })();
-
-  document.addEventListener('scroll', function (e) {
-    if (lList.length <= 0) {
-      return;
-    }
-    let scrollTop = document.scrollingElement.scrollTop + 10;
-    let dir;
-
-    if (lastTop - scrollTop > 0) {
-      dir = 'up';
-    } else {
-      dir = 'down';
-    }
-
-    lastTop = scrollTop;
-    if (scrollTop <= 0) {
-      if (lastIndex >= 0 && lastIndex < hList.length) {
-        lList[lastIndex].classList.remove(activeClass);
-      }
-      return;
-    }
-
-    let current = 0, hasFind = false;
-    for (let i = 0; i < hList.length; i++) {
-      if (hList[i].offsetTop > scrollTop) {
-        current = i;
-        hasFind = true;
-        break;
-      }
-    }
-    if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
-      current = hList.length - 1;
-    } else {
-      current--;
-    }
-    if (dir === 'down') {
-      if (current > lastIndex) {
-        addActiveClass(current);
-        removeActiveClass(lastIndex)
-        lastIndex = current;
-        removeParentActiveClass();
-        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
-      }
-    } else {
-      if (current < lastIndex) {
-        addActiveClass(current);
-        removeActiveClass(lastIndex);
-        lastIndex = current;
-        removeParentActiveClass();
-        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
-      }
-    }
-  });
-
-
-  window.addEventListener('load', function () {
-    showToc();
-    document.querySelector('#sidebar').style = 'display: block;';
-    tocWrapper.classList.add('toc-active');
-    setTimeout(function () {
-      if ("createEvent" in document) {
-        let evt = document.createEvent("HTMLEvents");
-        evt.initEvent("scroll", false, true);
-        document.dispatchEvent(evt);
-      }
-      else {
-        document.fireEvent("scroll");
-      }
-    }, 500)
-  })
-
-</script>
-            </div>
           
         
       </div>
@@ -547,8 +348,8 @@
           <div class="section bg-color post post-page">
             <section class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://lycLTb.github.io/post/template">
-      lyc的板子
+    <a class="post-title-link" href="https://lycLTb.github.io/post/solution-1555f">
+      【题解】1555F
     </a>
   </h1>
   <div class="post-meta">
@@ -556,7 +357,7 @@
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span class="language" data-lan="publish">发布于</span>
-      <span class="publish-time" data-t="2020-03-27 18:27:52">2020-03-27</span>
+      <span class="publish-time" data-t="2021-07-31 16:41:08">2021-07-31</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
@@ -565,14 +366,8 @@
       <span class="pc-show language" data-lan="category-in">分类于</span>
       
       
-      <a href="https://lycLTb.github.io/tag/JIeUE6pCT">
-        <span>关于lyc</span>
-      </a>、
-      
-      
-      
-      <a href="https://lycLTb.github.io/tag/nGY4Tbzrv">
-        <span>はるまきごはん</span>
+      <a href="https://lycLTb.github.io/tag/TJKQz1LEq">
+        <span>题解</span>
       </a>
       
       
@@ -586,224 +381,204 @@
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>957<span class="pc-show language" data-lan="words">字数</span></span>
+      <span>1154<span class="pc-show language" data-lan="words">字数</span></span>
     </span>
     
   </div>
 </section>
             <div class="post-body next-md-body" id="post_body">
-              <p><strong>弃用了（</strong></p>
-<p><strong>欢迎大家使用 <a href="https://github.com/lycLTb/Template-Generator">Template-Generator</a></strong></p>
-<h3 id="线段树">线段树</h3>
-<p>结构体封装，支持区间加/区间求和/区间最值</p>
-<pre><code class="language-c++">struct Segment_Tree{
-	const int INF=0x3f3f3f3f;
-	struct node{
-		int l,r,len;
-		int add,v,mn;
-	}st[MAXN*4];
-	
-	void build(int p,int l,int r){
-		st[p].l=l;st[p].r=r;
-		st[p].len=r-l+1;
-		if (l==r){
-			st[p].v=a[l];
-			st[p].mn=a[l];
-			return;
-		}
-		int mid=l+r&gt;&gt;1;
-		build(p&lt;&lt;1,l,mid);
-		build(p&lt;&lt;1|1,mid+1,r);
-		st[p].v=st[p&lt;&lt;1].v+st[p&lt;&lt;1|1].v;
-		st[p].mn=min(st[p&lt;&lt;1].mn,st[p&lt;&lt;1|1].mn);
-	}
-
-	void spread(int p){
-		st[p&lt;&lt;1].v+=st[p].add*st[p&lt;&lt;1].len;
-		st[p&lt;&lt;1|1].v+=st[p].add*st[p&lt;&lt;1|1].len;
-		st[p&lt;&lt;1].add+=st[p].add;
-		st[p&lt;&lt;1|1].add+=st[p].add;
-		st[p&lt;&lt;1].mn+=st[p].add;
-		st[p&lt;&lt;1|1].mn+=st[p].add;
-		st[p].add=0;
-	}
-
-	void change(int p,int l,int r,int c){
-		if (l&lt;=st[p].l&amp;&amp;st[p].r&lt;=r){
-			st[p].v+=c*st[p].len;
-			st[p].add+=c;
-			st[p].mn+=c;
-			return;
-		}
-		spread(p);
-		int mid=st[p].l+st[p].r&gt;&gt;1;
-		if (l&lt;=mid) change(p&lt;&lt;1,l,r,c);
-		if (r&gt;mid) change(p&lt;&lt;1|1,l,r,c);
-		st[p].v=st[p&lt;&lt;1].v+st[p&lt;&lt;1|1].v;
-		st[p].mn=min(st[p&lt;&lt;1].mn,st[p&lt;&lt;1|1].mn);
-	}
-
-	int query_sum(int p,int l,int r){
-		if (l&lt;=st[p].l&amp;&amp;st[p].r&lt;=r)
-			return st[p].v;
-		spread(p);
-		int mid=st[p].l+st[p].r&gt;&gt;1,ans=0;
-		if (l&lt;=mid) ans+=query_sum(p&lt;&lt;1,l,r);
-		if (r&gt;mid) ans+=query_sum(p&lt;&lt;1|1,l,r);
-		return ans;
-	}
-
-	int query_min(int p,int l,int r){
-		if (l&lt;=st[p].l &amp;&amp; st[p].r&lt;=r)
-			return st[p].mn;
-		spread(p);
-		int mid=st[p].l+st[p].r&gt;&gt;1,ans=INF;
-		if (l&lt;=mid) ans=query_min(p&lt;&lt;1,l,r);
-		if (r&gt;mid) ans=min(ans,query_min(p&lt;&lt;1|1,l,r));
-		return ans;
-	}
-};
-</code></pre>
-<h3 id="dinic">Dinic</h3>
-<pre><code class="language-c++">const int INF=1e9+7;
-const int MAXN=10005;
-const int MAXM=100005;
-int n,m,s,t;
-int Index=0;
-int w[MAXM*2];
-vector&lt;int&gt; v[MAXN];
-int point[MAXM*2];
-int label[MAXN];
-int cur[MAXN*2];
-
-void add_edge(int x,int y,int f){
-	v[x].push_back((++Index)*2);
-	v[y].push_back(Index*2+1);
-	w[Index*2]=f;
-	w[Index*2+1]=0;
-	point[Index*2]=y;
-	point[Index*2+1]=x;
-}
-
-bool bfs(){
-	memset(label,0,sizeof(label));
-	memset(cur,0,sizeof(cur));
-	queue&lt;int&gt; q;
-	q.push(s);
-	label[s]=1;
-	while (!q.empty()){
-		int now=q.front();
-		q.pop();
-		for (int i=0;i&lt;v[now].size();i++){
-			int edge=v[now][i];
-			int u=point[edge];
-			if (!label[u] &amp;&amp; w[edge]){
-				label[u]=label[now]+1;
-				q.push(u);
-			}
-		}
-	}
-
-	return label[t]!=0;
-}
-
-int dfs(int p,int limit){
-	if (limit==0||p==t) return limit;
-
-	int used=0;
-	for (int i=cur[p];i&lt;v[p].size();i++){
-		cur[p]=i;
-		int edge=v[p][i];
-		int u=point[edge];
-		if (w[edge] &amp;&amp; label[p]+1==label[u]){
-			int flow=dfs(u,min(limit-used,w[edge]));
-			used+=flow;
-			w[edge]-=flow;
-			w[edge^1]+=flow;
-			if (used==limit) break;
-		}
-	}
-
-	return used;
-}
-
-int dinic(){
-	int ans=0;
-	while (bfs())
-		ans+=dfs(s,INF);
-	return ans;
-}
-</code></pre>
-<h3 id="快速幂">快速幂</h3>
-<pre><code class="language-c++">int ksm(int x,int y){
-    int ans=1;
-    while (y&gt;0){
-        if (y%2==0){
-            y/=2;
-            x*=x;
-        }
-        ans*=x;
-        y--;
-    }
-    return ans;
-}
-</code></pre>
-<h3 id="树状数组">树状数组</h3>
-<p>结构体封装，支持单点修改，区间查询</p>
-<pre><code class="language-c++">struct BIT{
-	int tree[MAXN];
-
-	inline int lowbit(int x){
-	    return x&amp;(-x);
-	}
-
-	inline void add(int x,int c){
-		while (x&lt;=n+1){
-			tree[x]+=c;
-			x+=lowbit(x);
-		}
-	}
-
-	inline int query1(int x){
-		int ans=0;
-		while (x&gt;0){
-			ans+=tree[x];
-			x-=lowbit(x);
-		}
-		return ans;
-	}
-
-	inline int query2(int l,int r){
-		return query1(r)-query1(l-1);
-	}
-};
-</code></pre>
-<h3 id="对拍">对拍</h3>
-<p>批处理脚本，使用方法 <code>duipai.bat [你的代码的文件名] [std代码文件名] [数据生成器文件名]</code></p>
-<pre><code class="language-bash">@echo off
-del mine.exe
-del std.exe
-del datamaker.exe
-g++ -o mine.exe %1
-g++ -o std.exe %2
-g++ -o datamaker.exe %3
-echo OK
-pause
-:start
-	datamaker.exe&gt;data.txt
-	mine.exe&lt;data.txt&gt;mine.txt
-	std.exe&lt;data.txt&gt;std.txt
-	fc std.txt mine.txt
-if not errorlevel 1 goto start
-pause
-</code></pre>
-<h3 id="快读">快读</h3>
-<pre><code class="language-c++">int read(){
+              <p>称权值异或和为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 的简单环为合法的环。</p>
+<p>假设两个合法的环有至少一条公共边，那么考虑它们组成的大环的权值：每条公共边上的权值相同可以抵消，其他边上的权值异或和相同，也抵消，则大环的权值为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>——显然这两个环组成的大环不是合法的，所以原图一定是一个仙人掌状物。</p>
+<p>然后考虑仙人掌是个什么样的东西：对它建出 DFS 树，每条非树边连接的两个点 在树上所形成的链 互不相交。那么把询问离线，用并查集维护，先建出这棵 DFS 树，然后对于每条非树边判断是否合法。具体来说，判断：</p>
+<ol>
+<li>链上是否有边已经被另一条非树边覆盖</li>
+<li>这条非树边所形成的环是否合法</li>
+</ol>
+<p>可以用树剖 + 树状数组 / 线段树，需要实现链修改链查询。于是我们得到了一个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="script">O</mi><mo>(</mo><mi>n</mi><msup><mi>log</mi><mo>⁡</mo><mn>2</mn></msup><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\mathcal O(n \log ^2 n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.148448em;vertical-align:-0.25em;"></span><span class="mord mathcal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8984479999999999em;"><span style="top:-3.1473400000000002em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span> 的做法。</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="script">O</mi><mo>(</mo><mi>n</mi><msup><mi>log</mi><mo>⁡</mo><mn>2</mn></msup><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\mathcal O(n \log ^2 n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.148448em;vertical-align:-0.25em;"></span><span class="mord mathcal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8984479999999999em;"><span style="top:-3.1473400000000002em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span> 实现得不太好的话会被卡常，所以讲个好写的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="script">O</mi><mo>(</mo><mi>n</mi><mi>log</mi><mo>⁡</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\mathcal O(n \log n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathcal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span> 做法。</p>
+<p>注意到每条边最多会被覆盖一次，所以修改链的时候可以暴力单点修改，于是问题变成了单点修改链查询。链查询还是得写树剖，所以树上差分一下变成子树修改单点查询，跑一遍 DFS 序，树状数组维护就行了。</p>
+<p>值得注意的是这个图不一定连通，原图可能是一堆仙人掌。这个东西实际并不难处理，预处理 LCA 和 DFS 序的时候，对于每个连通块都跑一遍 DFS 就行了。</p>
+<pre><code class="language-c++">// 2021.07.31 - 09:09
+// Code by LTb
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+// #define int long long
+#define ll long long
+#define debug printf(&quot;Passing Line %d in function [%s].\n&quot;,__LINE__,__FUNCTION__)
+#define fi first
+#define se second
+inline int read(){
     int x=0,f=1;
-    char ch;
-    while(ch&lt;'0'||ch&gt;'9')  {if(ch=='-')f=-1;ch=getchar();}
-    while(ch&gt;='0'&amp;&amp;ch&lt;='9'){x=x*10+ch-'0';ch=getchar();}
+    char ch='.';
+    while(ch&lt;'0'||ch&gt;'9') {if(ch=='-')f=-1;ch=getchar();}
+    while(ch&gt;='0'&amp;&amp;ch&lt;='9') {x=x*10+ch-'0';ch=getchar();}
     return f*x;
+}
+inline void chmax(int &amp;x,int y){x=max(x,y);}
+inline void chmin(int &amp;x,int y){x=min(x,y);}
+
+const int MOD = 998244353;
+inline int add(int x,int y){return(x+y&gt;=MOD)?(x+y-MOD):((x+y&lt;0)?(x+y+MOD):(x+y));}
+
+const int MAXN = 300005, MAXM = 500005;
+
+// data
+int n, q;
+int fr[MAXM], to[MAXM], val[MAXM];
+vector&lt;int&gt; G[MAXN], H[MAXN];
+bool ans[MAXM];
+bool vis[MAXN];
+
+// lca
+int dep[MAXN];
+int fa[23][MAXN];
+
+void dfs1(int p, int par) {
+	fa[0][p] = par;
+	for (int i = 1; i &lt;= 20; i++)
+		fa[i][p] = fa[i - 1][fa[i - 1][p]];
+
+	for (int i : G[p]) {
+		if (i != par) {
+			dep[i] = dep[p] + 1;
+			dfs1(i, p);
+		}
+	}
+}
+
+int lca(int x, int y) {
+	if (dep[x] &lt; dep[y])
+		swap(x, y);
+
+	for (int i = 20; i &gt;= 0; i--)
+		if (dep[fa[i][x]] &gt;= dep[y]) x = fa[i][x];
+	if (x == y) return x;
+
+	for (int i = 20; i &gt;= 0; i--)
+		if (fa[i][x] != fa[i][y])
+			x = fa[i][x], y = fa[i][y];
+
+	return fa[0][x];
+}
+
+// dsu
+int dsu_fa[MAXN];
+inline int find(int x) {
+	if (dsu_fa[x] == x) return x;
+	return dsu_fa[x] = find(dsu_fa[x]);
+}
+
+// dfs_rank
+int dfn[MAXN], id[MAXN], siz[MAXN];
+int s[MAXN], a[MAXN];
+int ind;
+void dfs2(int p, int f) {
+	siz[p] = 1;
+	dfn[p] = ++ind;
+	id[ind] = p;
+
+	for (int j = 0; j &lt; G[p].size(); j++) {
+		int i = G[p][j], w = H[p][j];
+		if (i == f) continue;
+
+		s[i] = s[p] + w;
+		dfs2(i, p);
+		siz[p] += siz[i];
+	}
+}
+
+// bit
+struct BIT {
+	int tree[MAXN];
+	int max_value;
+
+	inline int lowbit(int x) {
+		return x &amp; (-x);
+	}
+
+	inline void add(int x, int c) {
+		while (x &lt;= max_value + 1) {
+			tree[x] += c;
+			x += lowbit(x);
+		}
+	}
+
+	inline int qry(int x) {
+		int ans = 0;
+		while (x &gt; 0) {
+			ans += tree[x];
+			x -= lowbit(x);
+		}
+		return ans;
+	}
+
+	inline int qry2(int l, int r) {
+		return qry(r) - qry(l - 1);
+	}
+
+	inline void add2(int l, int r, int c) {
+		add(l, c);
+		add(r + 1, -c);
+	}
+}t1;
+
+inline void upd(int x, int y, int l) {
+	while (x != l) {
+		t1.add2(dfn[x], dfn[x] + siz[x] - 1, 1);
+		x = fa[0][x];
+	}
+
+	while (y != l) {
+		t1.add2(dfn[y], dfn[y] + siz[y] - 1, 1);
+		y = fa[0][y];
+	}
+}
+
+signed main()
+
+{
+	n = read(), q = read();
+	for (int i = 1; i &lt;= n; i++)
+		dsu_fa[i] = i;
+
+	for (int i = 1; i &lt;= q; i++) {
+		fr[i] = read(), to[i] = read(), val[i] = read();
+		int x = find(fr[i]), y = find(to[i]);
+		if (x != y) {
+			ans[i] = true;
+			dsu_fa[x] = y;
+			G[fr[i]].push_back(to[i]), H[fr[i]].push_back(val[i]);
+			G[to[i]].push_back(fr[i]), H[to[i]].push_back(val[i]);
+		}
+	}
+
+	for (int i = 1; i &lt;= n; i++) {
+		if (!vis[find(i)]) {
+			vis[find(i)] = true;
+			dfs1(i, i);
+			dfs2(i, i);
+		}
+	}
+
+	t1.max_value = n;
+	for (int i = 1; i &lt;= q; i++) {
+		if (ans[i]) continue;
+		int x = fr[i], y = to[i];
+
+		int l = lca(x, y);
+		int v1 = s[x] + s[y] - 2 * s[l] + val[i];
+		int v2 = t1.qry(dfn[x]) + t1.qry(dfn[y]) - 2 * t1.qry(dfn[l]);
+		if (v2 == 0 &amp;&amp; v1 % 2 == 1) {
+			ans[i] = true;
+			upd(x, y, l);
+		}
+	}
+
+	for (int i = 1; i &lt;= q; i++) {
+		if (ans[i]) puts(&quot;YES&quot;);
+		else puts(&quot;NO&quot;);
+	}
+	return 0;
 }
 </code></pre>
 
@@ -818,7 +593,7 @@ pause
     </li>
     <li class="post-copyright-link">
       <strong class="language" data-lan="link">本文链接：</strong>
-      <a href="https://lycLTb.github.io/post/template" title="lyc的板子">https://lycLTb.github.io/post/template</a>
+      <a href="https://lycLTb.github.io/post/solution-1555f" title="【题解】1555F">https://lycLTb.github.io/post/solution-1555f</a>
     </li>
     <li class="post-copyright-license">
       <strong class="language" data-lan="copyright">版权声明： </strong>
@@ -827,23 +602,17 @@ pause
   </ul>
   <div class="tags">
     
-      <a href="https://lycLTb.github.io/tag/JIeUE6pCT"># 关于lyc</a>
-    
-      <a href="https://lycLTb.github.io/tag/nGY4Tbzrv"># はるまきごはん</a>
+      <a href="https://lycLTb.github.io/tag/TJKQz1LEq"># 题解</a>
     
   </div>
   <div class="nav">
     <div class="nav-prev">
       
-        <i class="fa fa-chevron-left"></i>
-        <a class="nav-pc-next" title="【学习笔记】数论" href="https://lycLTb.github.io/post/notes-math1">【学习笔记】数论</a class="nav-pc-next">
-        <a class="nav-mobile-prev" title="【学习笔记】数论" href="https://lycLTb.github.io/post/notes-math1">上一篇</a>
-      
     </div>
     <div class="nav-next">
       
-        <a class="nav-pc-next" title="【题解】CF56E" href="https://lycLTb.github.io/post/solution-cf56e">【题解】CF56E</a>
-        <a class="nav-mobile-next" title="【题解】CF56E" href="https://lycLTb.github.io/post/solution-cf56e">下一篇</a>
+        <a class="nav-pc-next" title="【题解】CF1508B" href="https://lycLTb.github.io/post/solution-cf1508b">【题解】CF1508B</a>
+        <a class="nav-mobile-next" title="【题解】CF1508B" href="https://lycLTb.github.io/post/solution-cf1508b">下一篇</a>
         <i class="fa fa-chevron-right"></i>
       
     </div>
