@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lycLTb.github.io/</id>
     <title>LTb的博客</title>
-    <updated>2021-07-31T08:44:16.237Z</updated>
+    <updated>2021-07-31T08:46:01.632Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lycLTb.github.io/"/>
     <link rel="self" href="https://lycLTb.github.io/atom.xml"/>
@@ -12,7 +12,7 @@
     <icon>https://lycLTb.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, LTb的博客</rights>
     <entry>
-        <title type="html"><![CDATA[【题解】1555F]]></title>
+        <title type="html"><![CDATA[【题解】CF1555F]]></title>
         <id>https://lycLTb.github.io/post/solution-1555f</id>
         <link href="https://lycLTb.github.io/post/solution-1555f">
         </link>
