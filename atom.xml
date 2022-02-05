@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lycLTb.github.io/</id>
     <title>LTb的博客</title>
-    <updated>2021-08-08T15:26:22.125Z</updated>
+    <updated>2022-02-05T11:06:51.993Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lycLTb.github.io/"/>
     <link rel="self" href="https://lycLTb.github.io/atom.xml"/>
@@ -10,25 +10,39 @@
 &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;/&gt;</subtitle>
     <logo>https://lycLTb.github.io/images/avatar.png</logo>
     <icon>https://lycLTb.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2021, LTb的博客</rights>
+    <rights>All rights reserved 2022, LTb的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[OI 回忆录 Part 2 - 空と海の間で]]></title>
+        <id>https://lycLTb.github.io/post/memoir-2/</id>
+        <link href="https://lycLTb.github.io/post/memoir-2/">
+        </link>
+        <updated>2021-10-29T14:08:17.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【题解】CF1566F]]></title>
+        <id>https://lycLTb.github.io/post/solution-cf1566f/</id>
+        <link href="https://lycLTb.github.io/post/solution-cf1566f/">
+        </link>
+        <updated>2021-10-21T01:21:45.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[【题解】CF329D]]></title>
-        <id>https://lycLTb.github.io/post/solution-cf329d</id>
-        <link href="https://lycLTb.github.io/post/solution-cf329d">
+        <id>https://lycLTb.github.io/post/solution-cf329d/</id>
+        <link href="https://lycLTb.github.io/post/solution-cf329d/">
         </link>
         <updated>2021-08-08T15:18:05.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[【题解】CF311C]]></title>
-        <id>https://lycLTb.github.io/post/solution-cf311c</id>
-        <link href="https://lycLTb.github.io/post/solution-cf311c">
+        <id>https://lycLTb.github.io/post/solution-cf311c/</id>
+        <link href="https://lycLTb.github.io/post/solution-cf311c/">
         </link>
         <updated>2021-08-06T15:18:54.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[【题解】CF1555F]]></title>
-        <id>https://lycLTb.github.io/post/solution-1555f</id>
-        <link href="https://lycLTb.github.io/post/solution-1555f">
+        <id>https://lycLTb.github.io/post/solution-1555f/</id>
+        <link href="https://lycLTb.github.io/post/solution-1555f/">
         </link>
         <updated>2021-07-31T08:41:08.000Z</updated>
         <summary type="html"><![CDATA[<p>称权值异或和为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 的简单环为合法的环。</p>
@@ -40,8 +54,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[【题解】CF1508B]]></title>
-        <id>https://lycLTb.github.io/post/solution-cf1508b</id>
-        <link href="https://lycLTb.github.io/post/solution-cf1508b">
+        <id>https://lycLTb.github.io/post/solution-cf1508b/</id>
+        <link href="https://lycLTb.github.io/post/solution-cf1508b/">
         </link>
         <updated>2021-04-18T08:40:16.000Z</updated>
         <summary type="html"><![CDATA[<p>提供一个比较神秘的解法</p>
@@ -53,22 +67,22 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[「套题泛做」NOIP 六校联考 2020]]></title>
-        <id>https://lycLTb.github.io/post/problem-solving-noip-6s-2020</id>
-        <link href="https://lycLTb.github.io/post/problem-solving-noip-6s-2020">
+        <id>https://lycLTb.github.io/post/problem-solving-noip-6s-2020/</id>
+        <link href="https://lycLTb.github.io/post/problem-solving-noip-6s-2020/">
         </link>
         <updated>2021-03-21T14:10:23.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[至今为止的 OI 生涯回忆录]]></title>
-        <id>https://lycLTb.github.io/post/2021-2-11</id>
-        <link href="https://lycLTb.github.io/post/2021-2-11">
+        <id>https://lycLTb.github.io/post/2021-2-11/</id>
+        <link href="https://lycLTb.github.io/post/2021-2-11/">
         </link>
         <updated>2021-02-11T05:22:10.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[【题解】CF1473F]]></title>
-        <id>https://lycLTb.github.io/post/solution-cf1473f</id>
-        <link href="https://lycLTb.github.io/post/solution-cf1473f">
+        <id>https://lycLTb.github.io/post/solution-cf1473f/</id>
+        <link href="https://lycLTb.github.io/post/solution-cf1473f/">
         </link>
         <updated>2021-01-17T11:12:06.000Z</updated>
         <summary type="html"><![CDATA[<p>好哦 是独立（并没有）做出来的第一道 *2700</p>
@@ -84,69 +98,9 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[【学习笔记】基础的各种东西]]></title>
-        <id>https://lycLTb.github.io/post/note-basic-algos</id>
-        <link href="https://lycLTb.github.io/post/note-basic-algos">
+        <id>https://lycLTb.github.io/post/note-basic-algos/</id>
+        <link href="https://lycLTb.github.io/post/note-basic-algos/">
         </link>
         <updated>2021-01-09T15:35:18.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[【题解】CF1461F]]></title>
-        <id>https://lycLTb.github.io/post/solution-cf1461f</id>
-        <link href="https://lycLTb.github.io/post/solution-cf1461f">
-        </link>
-        <updated>2020-12-13T09:23:49.000Z</updated>
-        <summary type="html"><![CDATA[<p>大力分类讨论：</p>
-<ul>
-<li>没有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">*</mtext></mrow><annotation encoding="application/x-tex">\texttt{*}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.52083em;vertical-align:0em;"></span><span class="mord text"><span class="mord texttt">*</span></span></span></span></span>
-<ul>
-<li>显然</li>
-</ul>
-</li>
-<li>有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">*</mtext></mrow><annotation encoding="application/x-tex">\texttt{*}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.52083em;vertical-align:0em;"></span><span class="mord text"><span class="mord texttt">*</span></span></span></span></span>：
-<ul>
-<li>没有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">+</mtext></mrow><annotation encoding="application/x-tex">\texttt{+}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.53055em;vertical-align:0em;"></span><span class="mord text"><span class="mord texttt">+</span></span></span></span></span>
-<ul>
-<li>没有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">-</mtext></mrow><annotation encoding="application/x-tex">\texttt{-}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.53055em;vertical-align:0em;"></span><span class="mord text"><span class="mord texttt">-</span></span></span></span></span>：显然</li>
-<li>有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">-</mtext></mrow><annotation encoding="application/x-tex">\texttt{-}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.53055em;vertical-align:0em;"></span><span class="mord text"><span class="mord texttt">-</span></span></span></span></span>：找到第一个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>（如果存在的话）并在这个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> 前面一个位置填上 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">-</mtext></mrow><annotation encoding="application/x-tex">\texttt{-}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.53055em;vertical-align:0em;"></span><span class="mord text"><span class="mord texttt">-</span></span></span></span></span>，其他全部填 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">*</mtext></mrow><annotation encoding="application/x-tex">\texttt{*}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.52083em;vertical-align:0em;"></span><span class="mord text"><span class="mord texttt">*</span></span></span></span></span>。</li>
-</ul>
-</li>
-<li>有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">+</mtext></mrow><annotation encoding="application/x-tex">\texttt{+}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.53055em;vertical-align:0em;"></span><span class="mord text"><span class="mord texttt">+</span></span></span></span></span> 的情况是接下来的讨论重点</li>
-</ul>
-</li>
-</ul>
-]]></summary>
-        <content type="html"><![CDATA[<p>大力分类讨论：</p>
-<ul>
-<li>没有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">*</mtext></mrow><annotation encoding="application/x-tex">\texttt{*}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.52083em;vertical-align:0em;"></span><span class="mord text"><span class="mord texttt">*</span></span></span></span></span>
-<ul>
-<li>显然</li>
-</ul>
-</li>
-<li>有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">*</mtext></mrow><annotation encoding="application/x-tex">\texttt{*}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.52083em;vertical-align:0em;"></span><span class="mord text"><span class="mord texttt">*</span></span></span></span></span>：
-<ul>
-<li>没有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">+</mtext></mrow><annotation encoding="application/x-tex">\texttt{+}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.53055em;vertical-align:0em;"></span><span class="mord text"><span class="mord texttt">+</span></span></span></span></span>
-<ul>
-<li>没有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">-</mtext></mrow><annotation encoding="application/x-tex">\texttt{-}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.53055em;vertical-align:0em;"></span><span class="mord text"><span class="mord texttt">-</span></span></span></span></span>：显然</li>
-<li>有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">-</mtext></mrow><annotation encoding="application/x-tex">\texttt{-}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.53055em;vertical-align:0em;"></span><span class="mord text"><span class="mord texttt">-</span></span></span></span></span>：找到第一个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>（如果存在的话）并在这个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> 前面一个位置填上 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">-</mtext></mrow><annotation encoding="application/x-tex">\texttt{-}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.53055em;vertical-align:0em;"></span><span class="mord text"><span class="mord texttt">-</span></span></span></span></span>，其他全部填 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">*</mtext></mrow><annotation encoding="application/x-tex">\texttt{*}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.52083em;vertical-align:0em;"></span><span class="mord text"><span class="mord texttt">*</span></span></span></span></span>。</li>
-</ul>
-</li>
-<li>有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">+</mtext></mrow><annotation encoding="application/x-tex">\texttt{+}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.53055em;vertical-align:0em;"></span><span class="mord text"><span class="mord texttt">+</span></span></span></span></span> 的情况是接下来的讨论重点</li>
-</ul>
-</li>
-</ul>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[【题解】CF1332F]]></title>
-        <id>https://lycLTb.github.io/post/solution-cf1332f</id>
-        <link href="https://lycLTb.github.io/post/solution-cf1332f">
-        </link>
-        <updated>2020-11-22T11:14:15.000Z</updated>
-        <summary type="html"><![CDATA[<p>纪念第一道自己写出来的 *2500</p>
-<p>我也不知道是不是自己写出来的 也许以前看过题解但是忘了（x</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>纪念第一道自己写出来的 *2500</p>
-<p>我也不知道是不是自己写出来的 也许以前看过题解但是忘了（x</p>
-]]></content>
     </entry>
 </feed>
