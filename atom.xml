@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lycLTb.github.io/</id>
     <title>LTb的博客</title>
-    <updated>2022-02-05T12:23:58.484Z</updated>
+    <updated>2022-02-05T12:32:50.801Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lycLTb.github.io/"/>
     <link rel="self" href="https://lycLTb.github.io/atom.xml"/>
@@ -17,10 +17,6 @@
         <link href="https://lycLTb.github.io/post/noip-csp-2021/">
         </link>
         <updated>2021-11-30T12:21:30.000Z</updated>
-        <summary type="html"><![CDATA[<p>理论上来说该写个游记。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>理论上来说该写个游记。</p>
-]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[【题解】CF1566F]]></title>
