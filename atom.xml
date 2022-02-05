@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lycLTb.github.io/</id>
     <title>LTb的博客</title>
-    <updated>2022-02-05T12:32:50.801Z</updated>
+    <updated>2022-02-05T12:37:23.427Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lycLTb.github.io/"/>
     <link rel="self" href="https://lycLTb.github.io/atom.xml"/>
@@ -11,6 +11,13 @@
     <logo>https://lycLTb.github.io/images/avatar.png</logo>
     <icon>https://lycLTb.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, LTb的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[WC 2022 游记。]]></title>
+        <id>https://lycLTb.github.io/post/wc2022/</id>
+        <link href="https://lycLTb.github.io/post/wc2022/">
+        </link>
+        <updated>2022-02-05T12:36:41.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[NOIP / CSP 2021 游记]]></title>
         <id>https://lycLTb.github.io/post/noip-csp-2021/</id>
@@ -95,12 +102,5 @@
 <p>发现是个网络流，于是捡起了快一年没碰的网络流复习（</p>
 <p>注意到这个有先决条件的选数 以及数据范围都长得很像最大权闭合子图模型，于是用这个模型去做。</p>
 ]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[【学习笔记】基础的各种东西]]></title>
-        <id>https://lycLTb.github.io/post/note-basic-algos/</id>
-        <link href="https://lycLTb.github.io/post/note-basic-algos/">
-        </link>
-        <updated>2021-01-09T15:35:18.000Z</updated>
     </entry>
 </feed>
