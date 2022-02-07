@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lycLTb.github.io/</id>
     <title>LTb的博客</title>
-    <updated>2022-02-05T12:37:23.427Z</updated>
+    <updated>2022-02-07T13:47:06.518Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lycLTb.github.io/"/>
     <link rel="self" href="https://lycLTb.github.io/atom.xml"/>
@@ -11,6 +11,13 @@
     <logo>https://lycLTb.github.io/images/avatar.png</logo>
     <icon>https://lycLTb.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, LTb的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[2022 省选前 OI 托福文化课并行摸鱼日记]]></title>
+        <id>https://lycLTb.github.io/post/JSOI2022-touching-fish/</id>
+        <link href="https://lycLTb.github.io/post/JSOI2022-touching-fish/">
+        </link>
+        <updated>2022-02-07T13:35:56.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[WC 2022 游记。]]></title>
         <id>https://lycLTb.github.io/post/wc2022/</id>
@@ -85,22 +92,5 @@
         <link href="https://lycLTb.github.io/post/2021-2-11/">
         </link>
         <updated>2021-02-11T05:22:10.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[【题解】CF1473F]]></title>
-        <id>https://lycLTb.github.io/post/solution-cf1473f/</id>
-        <link href="https://lycLTb.github.io/post/solution-cf1473f/">
-        </link>
-        <updated>2021-01-17T11:12:06.000Z</updated>
-        <summary type="html"><![CDATA[<p>好哦 是独立（并没有）做出来的第一道 *2700</p>
-<p>看到前几天的 edu yzhang 切了 F，于是跑去看了看题</p>
-<p>发现是个网络流，于是捡起了快一年没碰的网络流复习（</p>
-<p>注意到这个有先决条件的选数 以及数据范围都长得很像最大权闭合子图模型，于是用这个模型去做。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>好哦 是独立（并没有）做出来的第一道 *2700</p>
-<p>看到前几天的 edu yzhang 切了 F，于是跑去看了看题</p>
-<p>发现是个网络流，于是捡起了快一年没碰的网络流复习（</p>
-<p>注意到这个有先决条件的选数 以及数据范围都长得很像最大权闭合子图模型，于是用这个模型去做。</p>
-]]></content>
     </entry>
 </feed>
