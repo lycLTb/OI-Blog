@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lycLTb.github.io/</id>
     <title>LTb的博客</title>
-    <updated>2022-08-28T15:03:13.411Z</updated>
+    <updated>2022-12-15T15:46:14.453Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lycLTb.github.io/"/>
     <link rel="self" href="https://lycLTb.github.io/atom.xml"/>
@@ -11,6 +11,13 @@
     <logo>https://lycLTb.github.io/images/avatar.png</logo>
     <icon>https://lycLTb.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, LTb的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[上外 GAC-U 课程经验分享]]></title>
+        <id>https://lycLTb.github.io/post/shang-wai-gac-u-ke-cheng-jing-yan-fen-xiang/</id>
+        <link href="https://lycLTb.github.io/post/shang-wai-gac-u-ke-cheng-jing-yan-fen-xiang/">
+        </link>
+        <updated>2022-12-15T15:45:34.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[JSOI 2022 游记。]]></title>
         <id>https://lycLTb.github.io/post/jsoi2022/</id>
@@ -78,19 +85,6 @@
 ]]></summary>
         <content type="html"><![CDATA[<p>称权值异或和为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 的简单环为合法的环。</p>
 <p>假设两个合法的环有至少一条公共边，那么考虑它们组成的大环的权值：每条公共边上的权值相同可以抵消，其他边上的权值异或和相同，也抵消，则大环的权值为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>——显然这两个环组成的大环不是合法的，所以原图一定是一个仙人掌状物。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[【题解】CF1508B]]></title>
-        <id>https://lycLTb.github.io/post/solution-cf1508b/</id>
-        <link href="https://lycLTb.github.io/post/solution-cf1508b/">
-        </link>
-        <updated>2021-04-18T08:40:16.000Z</updated>
-        <summary type="html"><![CDATA[<p>提供一个比较神秘的解法</p>
-<p>除了我估计没人会写这种东西（捂脸</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>提供一个比较神秘的解法</p>
-<p>除了我估计没人会写这种东西（捂脸</p>
 ]]></content>
     </entry>
 </feed>
